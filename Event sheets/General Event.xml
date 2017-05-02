@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
+        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
+        <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
         <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
         <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
@@ -15,6 +18,17 @@
                         <action id="-3" name="Set position" sid="142724314301790" type="Weapon">
                             <param id="0" name="X">Character.ImagePointX(1)</param>
                             <param id="1" name="Y">Character.ImagePointY(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="841532555862773">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="434474443798613" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="468764042035042" type="System">
+                            <param id="0" name="Layer">&quot;Debug&quot;</param>
+                            <param id="1" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -626,33 +640,62 @@
         </event-group>
         <event-group description="" sid="454933713213725" title="Debug">
             <sub-events>
-                <event-block sid="298953420706445">
+                <event-block sid="485948123297574">
                     <conditions>
-                        <condition id="1" name="On text changed" sid="973045869970369" type="WeaponValue" />
+                        <condition id="-14" name="Compare variable" sid="917387276127545" type="System">
+                            <param id="0" name="Variable">Debug</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="182928130678218" type="System">
-                            <param id="0" name="Variable">WeaponLevel</param>
-                            <param id="1" name="Value">WeaponValue.Text</param>
-                        </action>
-                        <action id="0" name="Call function" sid="643658574771625" type="Function">
-                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="298953420706445">
+                            <conditions>
+                                <condition id="1" name="On text changed" sid="973045869970369" type="WeaponValue" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="182928130678218" type="System">
+                                    <param id="0" name="Variable">WeaponLevel</param>
+                                    <param id="1" name="Value">WeaponValue.Text</param>
+                                </action>
+                                <action id="0" name="Call function" sid="643658574771625" type="Function">
+                                    <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="491334946928430">
+                            <conditions>
+                                <condition id="1" name="On text changed" sid="680086586405441" type="ArmourValue" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="446355633269321" type="System">
+                                    <param id="0" name="Variable">ArmourLevel</param>
+                                    <param id="1" name="Value">ArmourValue.Text</param>
+                                </action>
+                                <action id="0" name="Call function" sid="610922940409101" type="Function">
+                                    <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="491334946928430">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="533761720001820" title="GeneralUI">
+            <sub-events>
+                <event-block sid="625881273895761">
                     <conditions>
-                        <condition id="1" name="On text changed" sid="680086586405441" type="ArmourValue" />
+                        <condition id="-1" name="Every tick" sid="924594377816375" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="446355633269321" type="System">
-                            <param id="0" name="Variable">ArmourLevel</param>
-                            <param id="1" name="Value">ArmourValue.Text</param>
+                        <action id="0" name="Set text" sid="551034790594669" type="Coins">
+                            <param id="0" name="Text">Money&amp;&quot;g&quot;</param>
                         </action>
-                        <action id="0" name="Call function" sid="610922940409101" type="Function">
-                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
+                        <action id="0" name="Set text" sid="328135166345375" type="Life">
+                            <param id="0" name="Text">PlayerHP&amp;&quot; HP&quot;</param>
                         </action>
                     </actions>
                 </event-block>

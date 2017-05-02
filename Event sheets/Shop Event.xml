@@ -21,6 +21,9 @@
                     <param id="0" name="Name">&quot;SetArmour&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="0" name="Set text" sid="928233678306769" type="ShopControls">
+                    <param id="0" name="Text">&quot;Shop Controls:&quot;&amp;newline&amp;&quot;Press R to select&quot;&amp;newline&amp;&quot;Press E to buy&quot;&amp;newline&amp;&quot;Press A to go back&quot;&amp;newline&amp;&quot;Press Arrows to browse&quot;&amp;newline&amp;&quot;Press Esc to quit the shop&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="724593200584193">
@@ -933,6 +936,61 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="732158679511652">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="152848774274121" type="Keyboard">
+                            <param id="0" name="Key">69 (E)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="413141843104617">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="253528236053677" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;BuyMenu&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="917054596315612" type="Function">
+                                    <param id="0" name="Name">&quot;BuyWeapon&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="104418540906252">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="197134354160725" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ArmorMenu&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="369504244418042" type="Function">
+                                    <param id="0" name="Name">&quot;BuyArmor&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="993572335721368">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="314312805381996" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;PotionMenu&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="401721535776499" type="Function">
+                                    <param id="0" name="Name">&quot;BuyPotion&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="506485523749050" title="DescriptionMenu">
@@ -1200,5 +1258,396 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="574024372871438" title="BuyGadget">
+            <sub-events>
+                <event-block sid="384770562166277">
+                    <conditions>
+                        <condition id="0" name="On function" sid="752579128631078" type="Function">
+                            <param id="0" name="Name">&quot;BuyWeapon&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="883799672164588">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="515698196975727" type="System">
+                                    <param id="0" name="Variable">WeaponLevel</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">ButtonWeaponsSelected</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="422728598835753">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="983953407091091" type="System">
+                                            <param id="0" name="Variable">ButtonWeaponsSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="898119429565978" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="269124679513424" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="638927323575791" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="630030516429094" type="Function">
+                                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="330514617109049">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="550264050325160" type="System">
+                                            <param id="0" name="Variable">ButtonWeaponsSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="130415347971674" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">500</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="362465620914835" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">500</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="164982083027693" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="603975242114956" type="Function">
+                                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="910867675879136">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="243080207636743" type="System">
+                                            <param id="0" name="Variable">ButtonWeaponsSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="726407505778161" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1000</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="631688260250492" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">1000</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="812807054021729" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="432206728740244" type="Function">
+                                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="547642847027276">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="724224960437790" type="System">
+                                            <param id="0" name="Variable">ButtonWeaponsSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="722168153293385" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">5000</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="225958366990401" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">5000</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="382234397537392" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="875756209654986" type="Function">
+                                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="656558011910992">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="200659446035123" type="System">
+                                            <param id="0" name="Variable">ButtonWeaponsSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="534502197067212" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">10000</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="282241368190983" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">10000</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="667670130315954" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="263951623595615" type="Function">
+                                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="867013602962953">
+                    <conditions>
+                        <condition id="0" name="On function" sid="835017697185191" type="Function">
+                            <param id="0" name="Name">&quot;BuyArmor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="207190290294123">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="969604179442898" type="System">
+                                    <param id="0" name="Variable">ArmourLevel</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">ButtonArmorSelected</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="528003651509087">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="158823298563106" type="System">
+                                            <param id="0" name="Variable">ButtonArmorSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="743012087965333" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">80</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="283552975609004" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">80</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="236232608952516" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="287420958027956" type="Function">
+                                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="814598647831978">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="337716198941974" type="System">
+                                            <param id="0" name="Variable">ButtonArmorSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="361276870452324" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">300</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="313128978146010" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">300</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="263680091388568" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="772616136935453" type="Function">
+                                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="993810315441643">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="846164203280458" type="System">
+                                            <param id="0" name="Variable">ButtonArmorSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="335392763606946" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">800</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="617904836116773" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">800</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="611629053106057" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="586480306483875" type="Function">
+                                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="109288835139472">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="682202866836075" type="System">
+                                            <param id="0" name="Variable">ButtonArmorSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="666501455280866" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">3000</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="350790754455548" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">3000</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="310931720016287" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="927759228982472" type="Function">
+                                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="777210712703843">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="449957581750035" type="System">
+                                            <param id="0" name="Variable">ButtonArmorSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="610521649148187" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">8000</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="335110318793771" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Value">8000</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="400767671632820" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="326663056591425" type="Function">
+                                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="588975262638220">
+                    <conditions>
+                        <condition id="0" name="On function" sid="549740175049396" type="Function">
+                            <param id="0" name="Name">&quot;BuyPotion&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="130753520885654">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="845485712177412" type="System">
+                                    <param id="0" name="Variable">PlayerHP</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="512508056742967" type="System">
+                                    <param id="0" name="Variable">Money</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="948354743949115" type="System">
+                                    <param id="0" name="Variable">Money</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="996211137490836" type="System">
+                                    <param id="0" name="Variable">PlayerHP</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="305795000417705">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="674873334913432" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="198930220027367" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="323970398300276">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="762677917291984" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="336993640831541" type="System">
+                    <param id="0" name="Layout">Stage 1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

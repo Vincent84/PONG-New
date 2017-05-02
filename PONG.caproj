@@ -354,6 +354,31 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="LifeSprite" sid="564002973145654">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="963038658646099" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Life" sid="724220922996280">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="CoinSprite" sid="626749073381568">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="808084637860135" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Coins" sid="635276451259828">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ShopControls" sid="420509181423676">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
