@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>General Event</name>
+    <events>
+        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">4</variable>
+        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">3</variable>
+        <event-group description="" sid="174947350477890" title="GeneralConfiguration">
+            <sub-events>
+                <event-block sid="403022564349946">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="233801387483661" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="142724314301790" type="Weapon">
+                            <param id="0" name="X">Character.ImagePointX(1)</param>
+                            <param id="1" name="Y">Character.ImagePointY(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="455317933986496" title="GeneralWeapon">
+            <sub-events>
+                <event-block sid="678328551926529">
+                    <conditions>
+                        <condition id="0" name="On function" sid="153044623687645" type="Function">
+                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="333554152703298">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Set value" sid="416771616216141" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Value">WeaponLevel</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="566281337412605">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="853239175980988" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="161721467382744" type="Weapon">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="889083595715259" type="Weapon">
+                                    <param id="0" name="Instance variable">ShootStep</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="386517312478243" type="Weapon">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="256951429362311" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="411479406464947">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="219234052490681" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="330697790230936" type="Weapon">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="371600284216799" type="Weapon">
+                                    <param id="0" name="Instance variable">ShootStep</param>
+                                    <param id="1" name="Value">0.3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="528170709720472" type="Weapon">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="888735502228684" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="810580934162475">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="683185169824092" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="895748957328034" type="Weapon">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="281252294077460" type="Weapon">
+                                    <param id="0" name="Instance variable">ShootStep</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="748518598170108" type="Weapon">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="185684826023877" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="377250796229880">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="772874980022485" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="595978787298032" type="Weapon">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="542377318247185" type="Weapon">
+                                    <param id="0" name="Instance variable">ShootStep</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="247906001546746" type="Weapon">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="111343742090904" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="209927232770428">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="750576501784675" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="243933407310041" type="Weapon">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="368518175701274" type="Weapon">
+                                    <param id="0" name="Instance variable">ShootStep</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="367279186075881" type="Weapon">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="291106252974948" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="701607368304452">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="622352824407297" type="Weapon">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="880745264321689" type="Weapon">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="803549291424494" type="Weapon">
+                                    <param id="0" name="Instance variable">ShootStep</param>
+                                    <param id="1" name="Value">0.4</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="117777164857968" type="Weapon">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="988903843109473" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="124639417496248">
+                    <conditions>
+                        <condition id="0" name="On function" sid="390134671986770" type="Function">
+                            <param id="0" name="Name">&quot;ShotBullet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="759693813780200">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="314561424145870" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="739538906529219" type="Weapon">
+                                    <param id="0" name="Object">Bullet</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="930191797392295" type="Bullet">
+                                    <param id="0" name="Frame number">WeaponLevel</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="375651661726092">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="919121188751841" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="808880924356317" type="Bullet">
+                                            <param id="0" name="Speed">700</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="764242511731441">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="416184027387636" type="Weapon" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="287969124069163" type="Bullet">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="129744378525116">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="344219151071769" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="403389241097598" type="Bullet">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="804527501254278">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="141140285495279" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="620588853642069">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="913272943065260" type="Weapon" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="616951595903976" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="729171468112130" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="805988832185145" type="Bullet">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="942099097372935" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="930519393382583" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="367647542737281" type="Bullet">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="607057030028737">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="631928412966968" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="902131729872072" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="221890569392633" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="816882255214471" type="Bullet">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="708048268558683" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="694628799721512" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="975791217992044" type="Bullet">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="965547113864746">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="769336162212670" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotsNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="168665085400872">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="282627881938644" type="Weapon" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="742123844438475" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="915330289987227" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="223937091665206" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="393299915418384" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="263846205225718" type="Bullet">
+                                            <param id="0" name="Angle">-15</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="242936142332314" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="523228813539263" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="312774359797481" type="Bullet">
+                                            <param id="0" name="Angle">15</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="754076939842569">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="841103979857208" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="670955885719819" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="426020306346811" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="517174674446591" type="Bullet">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="461860943402638" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="939723495308383" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="309436635107628" type="Bullet">
+                                            <param id="0" name="Angle">-165</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="137471652193392" type="Weapon">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="186000718286369" type="Bullet">
+                                            <param id="0" name="Frame number">WeaponLevel</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="335296285572584" type="Bullet">
+                                            <param id="0" name="Angle">165</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="797269746910045" title="GeneralArmour">
+            <sub-events>
+                <event-block sid="649414361269770">
+                    <conditions>
+                        <condition id="0" name="On function" sid="706910685419655" type="Function">
+                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="817454386443059">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Set value" sid="391385930443766" type="Character">
+                                    <param id="0" name="Instance variable">Armour</param>
+                                    <param id="1" name="Value">ArmourLevel</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="700052704745993" type="Character">
+                                    <param id="0" name="Frame number">Character.Armour</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="545156248589186">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="247117008767963" type="Character">
+                                            <param id="0" name="Instance variable">Armour</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="563922808142305" type="Character">
+                                            <param id="0" name="Instance variable">DecreaseDamage</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="397295316215439">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="124150600511535" type="Character">
+                                            <param id="0" name="Instance variable">Armour</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="907742330285188" type="Character">
+                                            <param id="0" name="Instance variable">DecreaseDamage</param>
+                                            <param id="1" name="Value">-10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="380074344235788">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="314299997152777" type="Character">
+                                            <param id="0" name="Instance variable">Armour</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="645008630478240" type="Character">
+                                            <param id="0" name="Instance variable">DecreaseDamage</param>
+                                            <param id="1" name="Value">-20</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="455737034573095">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="303395505988668" type="Character">
+                                            <param id="0" name="Instance variable">Armour</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="596456420393060" type="Character">
+                                            <param id="0" name="Instance variable">DecreaseDamage</param>
+                                            <param id="1" name="Value">-30</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="911109505348304">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="895698137906346" type="Character">
+                                            <param id="0" name="Instance variable">Armour</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="462012562155523" type="Character">
+                                            <param id="0" name="Instance variable">DecreaseDamage</param>
+                                            <param id="1" name="Value">-40</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="881029527202493">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="699930395750638" type="Character">
+                                            <param id="0" name="Instance variable">Armour</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="655866514506115" type="Character">
+                                            <param id="0" name="Instance variable">DecreaseDamage</param>
+                                            <param id="1" name="Value">-50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="857616587983541">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set text" sid="550310547115887" type="EffectArmour">
+                                    <param id="0" name="Text">&quot;Effect Armour: &quot;&amp;Character.DecreaseDamage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="764854279060268" title="GeneralPlayerControl">
+            <sub-events>
+                <event-block sid="225396289155121">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="265361763685422" type="Keyboard">
+                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="212657704927329" type="Weapon">
+                            <param id="0" name="Instance variable">ShotEnabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="525517529624541" type="Function">
+                            <param id="0" name="Name">&quot;ShotBullet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="310627210224974" type="Weapon">
+                            <param id="0" name="Instance variable">ShotEnabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="848500485576550" type="System">
+                            <param id="0" name="Seconds">Weapon.ShootStep</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="977686346289212" type="Weapon">
+                            <param id="0" name="Instance variable">ShotEnabled</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="922670661510311">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="389461199842845" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="689454677125520" type="Weapon">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="522057965846640">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="666668610522983" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="860583434068390" type="Weapon">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="454933713213725" title="Debug">
+            <sub-events>
+                <event-block sid="298953420706445">
+                    <conditions>
+                        <condition id="1" name="On text changed" sid="973045869970369" type="WeaponValue" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="182928130678218" type="System">
+                            <param id="0" name="Variable">WeaponLevel</param>
+                            <param id="1" name="Value">WeaponValue.Text</param>
+                        </action>
+                        <action id="0" name="Call function" sid="643658574771625" type="Function">
+                            <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="491334946928430">
+                    <conditions>
+                        <condition id="1" name="On text changed" sid="680086586405441" type="ArmourValue" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="446355633269321" type="System">
+                            <param id="0" name="Variable">ArmourLevel</param>
+                            <param id="1" name="Value">ArmourValue.Text</param>
+                        </action>
+                        <action id="0" name="Call function" sid="610922940409101" type="Function">
+                            <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

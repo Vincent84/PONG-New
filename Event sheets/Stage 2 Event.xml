@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Stage 2 Event</name>
+    <events>
+        <include>General Event</include>
+        <event-block sid="682127686101586">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="551178300003213" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="990547341493845" type="Weapon">
+                    <param id="0" name="Instance variable">Level</param>
+                    <param id="1" name="Value">WeaponLevel</param>
+                </action>
+                <action id="-10" name="Set value" sid="674035982721651" type="Bullet">
+                    <param id="0" name="Instance variable">Level</param>
+                    <param id="1" name="Value">WeaponLevel</param>
+                </action>
+                <action id="0" name="Call function" sid="161283907448096" type="Function">
+                    <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
