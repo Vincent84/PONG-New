@@ -191,6 +191,7 @@
                         <Damage>0</Damage>
                         <ShotsNumber>0</ShotsNumber>
                         <ShotEnabled>true</ShotEnabled>
+                        <Price>0</Price>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="BoundToLayout">

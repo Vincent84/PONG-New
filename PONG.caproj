@@ -122,6 +122,7 @@
                 <instance-variable name="Damage" sid="683746323757215" type="number" />
                 <instance-variable name="ShotsNumber" sid="642704530872586" type="number" />
                 <instance-variable name="ShotEnabled" sid="286073666254315" type="boolean" />
+                <instance-variable name="Price" sid="322731818572936" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToLayout" sid="781937017499562">
@@ -294,6 +295,64 @@
                 <instance-variable name="ID" sid="838442758541782" type="number" />
                 <instance-variable name="Visible" sid="234652196919124" type="boolean" />
             </instance-variables>
+        </object-type>
+        <object-type name="ButtonPotion" sid="584249871813255">
+            <plugin id="Button" />
+            <instance-variables>
+                <instance-variable name="Visible" sid="263751161086881" type="boolean" />
+            </instance-variables>
+        </object-type>
+        <object-type name="WeaponSprite" sid="752932887859094">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Price" sid="388374847371700" type="number" />
+                <instance-variable name="Description" sid="227000223985464" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="577837047589635" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Price" sid="530711498696613">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Description" sid="357097304518297">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ArmorSprite" sid="967817665714860">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Price" sid="967280567706879" type="number" />
+                <instance-variable name="Description" sid="606891968717620" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="318168830159732" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PotionSprite" sid="750191847854870">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Price" sid="491137112050147" type="number" />
+                <instance-variable name="Description" sid="266507850870239" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="505685902956870" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

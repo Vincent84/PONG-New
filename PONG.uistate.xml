@@ -11,9 +11,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="1">Shop</layout>
+        <layout order="4">Stage 1</layout>
         <event-sheet order="0">General Event</event-sheet>
-        <event-sheet order="2">Shop Event</event-sheet>
-        <event-sheet active="1" order="3">Stage 1 Event</event-sheet>
+        <event-sheet active="1" order="2">Shop Event</event-sheet>
+        <event-sheet order="3">Stage 1 Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -41,5 +42,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/MuroInvisibile/" />
         <folder expanded="1" path="animation-folder/Quadropong/" />
         <folder expanded="1" path="animation-folder/SpawnMenu/" />
+        <folder expanded="1" path="animation-folder/WeaponSprite/" />
+        <folder expanded="1" path="animation-folder/ArmorSprite/" />
+        <folder expanded="1" path="animation-folder/PotionSprite/" />
     </folders-expanded>
 </c2uistate>

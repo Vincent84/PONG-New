@@ -3,8 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">4</variable>
-        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">3</variable>
+        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
+        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
             <sub-events>
                 <event-block sid="403022564349946">
@@ -89,6 +89,10 @@
                                     <param id="0" name="Instance variable">ShotsNumber</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="540841276821225" type="Weapon">
+                                    <param id="0" name="Instance variable">Price</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="810580934162475">
@@ -114,6 +118,10 @@
                                 <action id="-10" name="Set value" sid="185684826023877" type="Weapon">
                                     <param id="0" name="Instance variable">ShotsNumber</param>
                                     <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="220649674328530" type="Weapon">
+                                    <param id="0" name="Instance variable">Price</param>
+                                    <param id="1" name="Value">500</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -141,6 +149,10 @@
                                     <param id="0" name="Instance variable">ShotsNumber</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="868147191880228" type="Weapon">
+                                    <param id="0" name="Instance variable">Price</param>
+                                    <param id="1" name="Value">1000</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="209927232770428">
@@ -167,6 +179,10 @@
                                     <param id="0" name="Instance variable">ShotsNumber</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="281814674067906" type="Weapon">
+                                    <param id="0" name="Instance variable">Price</param>
+                                    <param id="1" name="Value">5000</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="701607368304452">
@@ -192,6 +208,10 @@
                                 <action id="-10" name="Set value" sid="988903843109473" type="Weapon">
                                     <param id="0" name="Instance variable">ShotsNumber</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="921343312633635" type="Weapon">
+                                    <param id="0" name="Instance variable">Price</param>
+                                    <param id="1" name="Value">10000</param>
                                 </action>
                             </actions>
                         </event-block>
