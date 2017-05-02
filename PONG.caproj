@@ -17,9 +17,12 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -34,7 +37,7 @@
         <width>480</width>
         <height>320</height>
     </window-size>
-    <pixel-rounding>0</pixel-rounding>
+    <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
@@ -49,7 +52,7 @@
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
         <prop name="Preview browser">(default)</prop>
-        <prop name="Sampling">Linear</prop>
+        <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
@@ -98,19 +101,6 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
                     </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="ProvaPiattaforma" sid="424644167633027">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="581427148999336">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="284034149316594" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -377,6 +367,69 @@
             <plugin id="Text" />
         </object-type>
         <object-type name="ShopControls" sid="420509181423676">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ErbaSuperMario" sid="442062621790223">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="169695145644933">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="403308715863869">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="TerrenoSuperMario" sid="560876328321438">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="Text" sid="982317488708642">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Enemies" sid="469133773334113">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="563968678308324" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="482534282722418">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911934279476472" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Coin" sid="440605088784906">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="746845967023435">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="250938504450072" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bounce" sid="694469724105855">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="ProgressBar" sid="286959495597541">
+            <plugin id="progressbar" />
+        </object-type>
+        <object-type name="Text2" sid="718098871015354">
             <plugin id="Text" />
         </object-type>
     </object-folder>

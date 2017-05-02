@@ -3,9 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">0</variable>
+        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">1000</variable>
         <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
-        <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
+        <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">1</variable>
         <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
         <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
@@ -256,6 +256,10 @@
                                 <action id="5" name="Set frame" sid="930191797392295" type="Bullet">
                                     <param id="0" name="Frame number">WeaponLevel</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="784693176304285" type="Bullet">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">Weapon.Damage</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="375651661726092">
@@ -320,6 +324,10 @@
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="805988832185145" type="Bullet">
                                             <param id="0" name="Angle">180</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="486254339670022" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
+                                        </action>
                                         <action id="0" name="Spawn another object" sid="942099097372935" type="Weapon">
                                             <param id="0" name="Object">Bullet</param>
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
@@ -330,6 +338,10 @@
                                         </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="367647542737281" type="Bullet">
                                             <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="498402449442723" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -342,6 +354,10 @@
                                             <param id="0" name="Object">Bullet</param>
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="673611401729076" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="221890569392633" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>
@@ -359,6 +375,10 @@
                                         </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="975791217992044" type="Bullet">
                                             <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="717346057744461" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -387,10 +407,18 @@
                                         <action id="5" name="Set frame" sid="915330289987227" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="741677721961413" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
+                                        </action>
                                         <action id="0" name="Spawn another object" sid="223937091665206" type="Weapon">
                                             <param id="0" name="Object">Bullet</param>
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="743367283528315" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="393299915418384" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>
@@ -402,6 +430,10 @@
                                             <param id="0" name="Object">Bullet</param>
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="271696156555583" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="523228813539263" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>
@@ -421,6 +453,10 @@
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">1</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="271224261286420" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
+                                        </action>
                                         <action id="5" name="Set frame" sid="426020306346811" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>
                                         </action>
@@ -432,6 +468,10 @@
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">1</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="552592174564337" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
+                                        </action>
                                         <action id="5" name="Set frame" sid="939723495308383" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>
                                         </action>
@@ -442,6 +482,10 @@
                                             <param id="0" name="Object">Bullet</param>
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="712772401503795" type="Bullet">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">Weapon.Damage</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="186000718286369" type="Bullet">
                                             <param id="0" name="Frame number">WeaponLevel</param>

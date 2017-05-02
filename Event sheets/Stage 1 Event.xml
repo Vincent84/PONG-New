@@ -17,6 +17,144 @@
                     <param id="0" name="Name">&quot;SetArmour&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="0" name="Set text" sid="451522438465111" type="Text2">
+                    <param id="0" name="Text">Enemies.HP</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="832209844199285">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="288418112651826" type="Character">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">320</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="271353746689930" type="System" />
+                <action id="-11" name="Subtract from" sid="143606365142195" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="933389240345955">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="821990022305419" type="Enemies">
+                    <param id="0" name="Object">Bounce</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="4" name="Bounce off object" sid="309124000687305" type="Enemies">
+                    <param id="0" name="Object">Bounce</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="886867780304766">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="113485565199007" type="Bullet" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="486370631962290" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="192774920044278">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="893944951993185" type="Bullet">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="189642209216408" type="Bullet" />
+                <action id="-12" name="Subtract from" sid="439785361673788" type="Enemies">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Value">Bullet.Damage</param>
+                </action>
+                <action id="0" name="Set text" sid="221006321660912" type="Text2">
+                    <param id="0" name="Text">Enemies.HP</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="614568949983037">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="660246795420175" type="Enemies">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="792655786445946" type="Enemies" />
+            </actions>
+        </event-block>
+        <event-block sid="506942589540577">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="387926838850653" type="Character">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="285688170530637">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Compare two values" sid="674806287812324" type="System">
+                            <param id="0" name="First value">15 + Character.DecreaseDamage</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="293608386093682" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">15 + Character.DecreaseDamage</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="227672909476991">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="374243943226015" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="416587230551024" type="System" />
+                <action id="-9" name="Set value" sid="593870204958059" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="621309310013056" type="System">
+                    <param id="0" name="Variable">Money</param>
+                    <param id="1" name="Value">round(Money * 0.2)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="345242551276296">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="517049620455571" type="Enemies" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="403892652268755" type="Enemies">
+                    <param id="0" name="Object">Coin</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="178583024738429">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="892989430231783" type="Coin">
+                    <param id="0" name="Object">Character</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="827476741502144" type="Coin" />
+                <action id="-10" name="Add to" sid="469638088071797" type="System">
+                    <param id="0" name="Variable">Money</param>
+                    <param id="1" name="Value">4</param>
+                </action>
             </actions>
         </event-block>
     </events>

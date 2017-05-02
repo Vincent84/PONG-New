@@ -10,11 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">Stage 1</layout>
-        <layout order="3">Shop</layout>
-        <event-sheet active="1" order="0">General Event</event-sheet>
-        <event-sheet order="1">Stage 1 Event</event-sheet>
-        <event-sheet order="4">Shop Event</event-sheet>
+        <layout order="3">Stage 1</layout>
+        <event-sheet order="1">General Event</event-sheet>
+        <event-sheet active="1" order="2">Stage 1 Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -32,7 +30,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/Character/" />
-        <folder expanded="1" path="animation-folder/ProvaPiattaforma/" />
         <folder expanded="1" path="animation-folder/Weapon/" />
         <folder expanded="1" path="animation-folder/Sprite2/" />
         <folder expanded="1" path="animation-folder/Bullet/" />
@@ -47,5 +44,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/PotionSprite/" />
         <folder expanded="1" path="animation-folder/LifeSprite/" />
         <folder expanded="1" path="animation-folder/CoinSprite/" />
+        <folder expanded="1" path="animation-folder/Enemies/" />
+        <folder expanded="1" path="animation-folder/Coin/" />
     </folders-expanded>
 </c2uistate>
