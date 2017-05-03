@@ -299,6 +299,7 @@
             <instance-variables>
                 <instance-variable name="Price" sid="388374847371700" type="number" />
                 <instance-variable name="Description" sid="227000223985464" type="string" />
+                <instance-variable name="Name" sid="643250441755938" type="string" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="577837047589635" speed="0">
@@ -322,6 +323,7 @@
             <instance-variables>
                 <instance-variable name="Price" sid="967280567706879" type="number" />
                 <instance-variable name="Description" sid="606891968717620" type="string" />
+                <instance-variable name="Name" sid="510880866228285" type="string" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="318168830159732" speed="0">
@@ -515,6 +517,39 @@
         <object-type name="TiledBackground" sid="378996099697350">
             <plugin id="TiledBg" />
             <texture />
+        </object-type>
+        <object-type name="Text3" sid="983740234563329">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="266377894872347">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="137142107405402" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text4" sid="513489503332230">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ButtonConfirm" sid="519755420413734">
+            <plugin id="Button" />
+            <instance-variables>
+                <instance-variable name="ID" sid="478907738778947" type="number" />
+                <instance-variable name="isSelected" sid="639338821589507" type="boolean" />
+                <instance-variable name="isVisible" sid="377385877119501" type="boolean" />
+            </instance-variables>
+        </object-type>
+        <object-type name="ConfirmText" sid="218904645611181">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ConfirmContainer" sid="646337164496850">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="603076578516534" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

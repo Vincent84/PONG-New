@@ -3,8 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Shop Event</name>
     <events>
+        <variable constant="0" name="BuyType" sid="145860861321218" static="0" type="text"></variable>
         <variable constant="0" name="ButtonArmorSelected" sid="610180243750148" static="0" type="number">1</variable>
-        <variable constant="0" name="MenuSelected" sid="408585186859566" static="0" type="text">Menu</variable>
+        <variable constant="0" name="MenuSelected" sid="408585186859566" static="0" type="text">None</variable>
         <variable constant="0" name="ButtonWeaponsSelected" sid="626917001370578" static="0" type="number">1</variable>
         <variable constant="0" name="ButtonMenuSelected" sid="435595923133002" static="0" type="number">1</variable>
         <include>General Event</include>
@@ -23,6 +24,10 @@
                 </action>
                 <action id="0" name="Set text" sid="928233678306769" type="ShopControls">
                     <param id="0" name="Text">&quot;Shop Controls:&quot;&amp;newline&amp;&quot;Press R to select&quot;&amp;newline&amp;&quot;Press E to buy&quot;&amp;newline&amp;&quot;Press A to go back&quot;&amp;newline&amp;&quot;Press Arrows to browse&quot;&amp;newline&amp;&quot;Press Esc to quit the shop&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="113897979686517" type="System">
+                    <param id="0" name="Layer">&quot;ConfirmAndError&quot;</param>
+                    <param id="1" name="Visibility">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -490,6 +495,18 @@
                             <param id="0" name="Property name">&quot;border&quot;</param>
                             <param id="1" name="Value">&quot;none&quot;</param>
                         </action>
+                        <action id="5" name="Set CSS style" sid="318691914638750" type="ButtonConfirm">
+                            <param id="0" name="Property name">&quot;color&quot;</param>
+                            <param id="1" name="Value">&quot;white&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="735090084188824" type="ButtonConfirm">
+                            <param id="0" name="Property name">&quot;background&quot;</param>
+                            <param id="1" name="Value">&quot;black&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="839778821183237" type="ButtonConfirm">
+                            <param id="0" name="Property name">&quot;border&quot;</param>
+                            <param id="1" name="Value">&quot;none&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="335173591184479">
@@ -538,6 +555,23 @@
                             <param id="1" name="Value">&quot;black&quot;</param>
                         </action>
                         <action id="5" name="Set CSS style" sid="933103861275746" type="ButtonArmors">
+                            <param id="0" name="Property name">&quot;background&quot;</param>
+                            <param id="1" name="Value">&quot;white&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="590059757176735">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="448356609240296" type="ButtonConfirm">
+                            <param id="0" name="Instance variable">isSelected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set CSS style" sid="773490137399384" type="ButtonConfirm">
+                            <param id="0" name="Property name">&quot;color&quot;</param>
+                            <param id="1" name="Value">&quot;black&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="996354434433289" type="ButtonConfirm">
                             <param id="0" name="Property name">&quot;background&quot;</param>
                             <param id="1" name="Value">&quot;white&quot;</param>
                         </action>
@@ -657,29 +691,10 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="596577933780668">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="807813534472155" type="Character">
-                            <param id="0" name="Object">SpawnMenu</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="2" name="Set visible" sid="987198165984507" type="ButtonMenu">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action behavior="Platform" id="0" name="Set ignoring input" sid="142154078676428" type="Character">
-                            <param id="0" name="Input">1</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="116509936780768" type="ButtonMenu">
-                            <param id="0" name="Instance variable">Visible</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="382130954048436">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="687867648981242" type="Keyboard">
-                            <param id="0" name="Key">65 (A)</param>
+                            <param id="0" name="Key">27 (Esc)</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -711,10 +726,15 @@
                                     <param id="0" name="Instance variable">Visible</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="693297782746355" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;None&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
-                        <event-block sid="909321650727960">
+                        <event-block sid="175137845269454">
                             <conditions>
+                                <condition id="-22" name="Else" sid="650401955436324" type="System" />
                                 <condition id="-8" name="Compare two values" sid="125414613670580" type="System">
                                     <param id="0" name="First value">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
@@ -752,8 +772,9 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="314881296457976">
+                        <event-block sid="483223045171799">
                             <conditions>
+                                <condition id="-22" name="Else" sid="232932274638204" type="System" />
                                 <condition id="-8" name="Compare two values" sid="334291546347525" type="System">
                                     <param id="0" name="First value">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
@@ -791,8 +812,9 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="379183192177824">
+                        <event-block sid="892864188550662">
                             <conditions>
+                                <condition id="-22" name="Else" sid="611764946377134" type="System" />
                                 <condition id="-8" name="Compare two values" sid="101953037270728" type="System">
                                     <param id="0" name="First value">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
@@ -822,170 +844,582 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="520019032545950">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="928245088401058" type="System" />
+                                <condition id="-8" name="Compare two values" sid="490913703887320" type="System">
+                                    <param id="0" name="First value">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="126645498548918" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">BuyType&amp;&quot;Menu&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="442960872971281" type="Function">
+                                    <param id="0" name="Name">&quot;SetInvisibleConfirmMenu&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="686505299933629">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="189598461608128" type="Keyboard">
-                            <param id="0" name="Key">82 (R)</param>
+                            <param id="0" name="Key">13 (Return)</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="626321089437451">
+                        <event-block sid="381334811253833">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="175934205698418" type="System">
-                                    <param id="0" name="Variable">ButtonMenuSelected</param>
+                                <condition id="-14" name="Compare variable" sid="430145470368177" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="280646095464429" type="ButtonMenu">
-                                    <param id="0" name="Instance variable">Visible</param>
+                                    <param id="2" name="Value">&quot;None&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="2" name="Set visible" sid="730198758618175" type="ButtonWeapons">
+                                <action id="2" name="Set visible" sid="987198165984507" type="ButtonMenu">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="909106530725150" type="System">
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="142154078676428" type="Character">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="116509936780768" type="ButtonMenu">
+                                    <param id="0" name="Instance variable">Visible</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="899149993377647" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
-                                    <param id="1" name="Value">&quot;BuyMenu&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="832383870421823" type="Function">
-                                    <param id="0" name="Name">&quot;setWeaponDescription&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="411838246176925" type="Price">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="660650127309790" type="Description">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="242094806943195" type="WeaponSprite">
-                                    <param id="0" name="Visibility">1</param>
+                                    <param id="1" name="Value">&quot;Menu&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="674376105005176">
+                        <event-block sid="906159738464726">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="140855624164188" type="System">
-                                    <param id="0" name="Variable">ButtonMenuSelected</param>
+                                <condition id="-22" name="Else" sid="928403177864147" type="System" />
+                                <condition id="-14" name="Compare variable" sid="524749651888139" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
+                                    <param id="2" name="Value">&quot;Menu&quot;</param>
                                 </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="326176541792403" type="ButtonMenu">
+                                <condition id="-8" name="Is boolean instance variable set" sid="312825032732861" type="ButtonMenu">
                                     <param id="0" name="Instance variable">Visible</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="2" name="Set visible" sid="194933546849928" type="ButtonArmors">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="780480406943686" type="System">
-                                    <param id="0" name="Variable">MenuSelected</param>
-                                    <param id="1" name="Value">&quot;ArmorMenu&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="294056279641426" type="Function">
-                                    <param id="0" name="Name">&quot;setArmorDescription&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="818316775648291" type="Price">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="474565789487805" type="Description">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="238521976561976" type="ArmorSprite">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="626321089437451">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="175934205698418" type="System">
+                                            <param id="0" name="Variable">ButtonMenuSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set visible" sid="730198758618175" type="ButtonWeapons">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="909106530725150" type="System">
+                                            <param id="0" name="Variable">MenuSelected</param>
+                                            <param id="1" name="Value">&quot;BuyMenu&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="832383870421823" type="Function">
+                                            <param id="0" name="Name">&quot;setWeaponDescription&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="411838246176925" type="Price">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="660650127309790" type="Description">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="242094806943195" type="WeaponSprite">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="199944641062635">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="494924213366695" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="140855624164188" type="System">
+                                            <param id="0" name="Variable">ButtonMenuSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set visible" sid="194933546849928" type="ButtonArmors">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="780480406943686" type="System">
+                                            <param id="0" name="Variable">MenuSelected</param>
+                                            <param id="1" name="Value">&quot;ArmorMenu&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="294056279641426" type="Function">
+                                            <param id="0" name="Name">&quot;setArmorDescription&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="818316775648291" type="Price">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="474565789487805" type="Description">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="238521976561976" type="ArmorSprite">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="396845895732279">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="336323707872645" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="408335773560259" type="System">
+                                            <param id="0" name="Variable">ButtonMenuSelected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set visible" sid="744745808935780" type="ButtonPotion">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="711270679906179" type="System">
+                                            <param id="0" name="Variable">MenuSelected</param>
+                                            <param id="1" name="Value">&quot;PotionMenu&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="510096529661679" type="Function">
+                                            <param id="0" name="Name">&quot;setPotionDescription&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="168580249070541" type="Price">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="443036782993017" type="Description">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="923114344450705" type="PotionSprite">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="750190402475099">
+                        <event-block sid="206079391582655">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="408335773560259" type="System">
-                                    <param id="0" name="Variable">ButtonMenuSelected</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="333242530269623" type="ButtonMenu">
-                                    <param id="0" name="Instance variable">Visible</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="2" name="Set visible" sid="744745808935780" type="ButtonPotion">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="711270679906179" type="System">
-                                    <param id="0" name="Variable">MenuSelected</param>
-                                    <param id="1" name="Value">&quot;PotionMenu&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="510096529661679" type="Function">
-                                    <param id="0" name="Name">&quot;setPotionDescription&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="168580249070541" type="Price">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="443036782993017" type="Description">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="923114344450705" type="PotionSprite">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="732158679511652">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="152848774274121" type="Keyboard">
-                            <param id="0" name="Key">69 (E)</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="413141843104617">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="253528236053677" type="System">
+                                <condition id="-22" name="Else" sid="879532309033001" type="System" />
+                                <condition id="-14" name="Compare variable" sid="573429924529048" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;BuyMenu&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="917054596315612" type="Function">
-                                    <param id="0" name="Name">&quot;BuyWeapon&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action id="-9" name="Set value" sid="414814331329237" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="963839908579430" type="System">
+                                    <param id="0" name="Variable">BuyType</param>
+                                    <param id="1" name="Value">&quot;Buy&quot;</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="197124852720194">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="405889817743925" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">ButtonWeaponsSelected</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="877125057574178" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">WeaponSprite.Price</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="428731011231219" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Confirm&quot;{###}WeaponSprite.Name</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="835464950453041">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="682419171959168" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="275360709821340" type="System">
+                                            <param id="0" name="Variable">WeaponLevel</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">ButtonWeaponsSelected</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="898672073276160" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Error&quot;{###}&quot;Sold&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="982425724592798">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="751625538229010" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="994611103284327" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">WeaponSprite.Price</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="517910487264851" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Error&quot;{###}&quot;Money&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="104418540906252">
+                        <event-block sid="289844763379334">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="197134354160725" type="System">
+                                <condition id="-22" name="Else" sid="679606290496227" type="System" />
+                                <condition id="-14" name="Compare variable" sid="957129124784725" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;ArmorMenu&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="369504244418042" type="Function">
-                                    <param id="0" name="Name">&quot;BuyArmor&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action id="-9" name="Set value" sid="557657167190477" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="904548953173031" type="System">
+                                    <param id="0" name="Variable">BuyType</param>
+                                    <param id="1" name="Value">&quot;Armor&quot;</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="307276530545713">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="408584925213797" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">ButtonArmorSelected</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="359084575533337" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">ArmorSprite.Price</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="406613933111055" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Confirm&quot;{###}ArmorSprite.Name</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="509202059094039">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="742092594859933" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="181733655482705" type="System">
+                                            <param id="0" name="Variable">ArmourLevel</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">ButtonArmorSelected</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="527612999435567" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Error&quot;{###}&quot;Sold&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="191617693616006">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="481325103895946" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="346790447491134" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">ArmorSprite.Price</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="944075973852145" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Error&quot;{###}&quot;Money&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="993572335721368">
+                        <event-block sid="137165928953549">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="314312805381996" type="System">
+                                <condition id="-22" name="Else" sid="963871832225704" type="System" />
+                                <condition id="-14" name="Compare variable" sid="160715053346322" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;PotionMenu&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="401721535776499" type="Function">
-                                    <param id="0" name="Name">&quot;BuyPotion&quot;</param>
+                                <action id="-9" name="Set value" sid="357343527701783" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="778687919133633" type="System">
+                                    <param id="0" name="Variable">BuyType</param>
+                                    <param id="1" name="Value">&quot;Potion&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="657923056109987">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="878724118690463" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="537853254751544" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="236051425954579" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Confirm&quot;{###}&quot;the heal&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="633091277105566">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="351525462643651" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="385919333926789" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="472619880470222" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Error&quot;{###}&quot;Sold&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="315101058631921">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="155262150384606" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="696419321019890" type="System">
+                                            <param id="0" name="Variable">Money</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="143564865754574" type="Function">
+                                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Error&quot;{###}&quot;Money&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="648542495713522">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="858755475676582" type="System" />
+                                <condition id="-14" name="Compare variable" sid="446854402600925" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="472399271535730" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="746934343213401" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="229687567212815" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isVisible</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="439093398086397" type="Function">
+                                    <param id="0" name="Name">&quot;BuyGadget&quot;</param>
+                                    <param id="1" name="Parameter {n}">BuyType</param>
+                                </action>
+                                <action id="0" name="Call function" sid="156612501973932" type="Function">
+                                    <param id="0" name="Name">&quot;SetInvisibleConfirmMenu&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="876009733199155">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="522641540524454" type="System" />
+                                <condition id="-14" name="Compare variable" sid="466714480580538" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="931683302417548" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="721990367124754" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="123566965956066" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isVisible</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="255285536220775" type="Function">
+                                    <param id="0" name="Name">&quot;SetInvisibleConfirmMenu&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="842302062318975">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="316064927232364" type="System" />
+                                <condition id="-14" name="Compare variable" sid="784230517218480" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="669331621999686" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="285732076873956" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="931985519361349" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isVisible</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="895305591114673" type="Function">
+                                    <param id="0" name="Name">&quot;SetInvisibleConfirmMenu&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="967865974373852">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="478436409074027" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="718448080995537">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="519112005202474" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="925072146471928" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="300032145113776" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="753508179697719" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="495948306162660">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="421245456966655" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="858129400531176" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="702782730320419" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="673098831958613">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="136914737570769" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="718142241462161">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="889061912576849" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="213680411570719" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="425994720339105" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="313305277707074" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="274822680365621">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="381874838320293" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="559746501851620" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="327862625315125" type="ButtonConfirm">
+                                    <param id="0" name="Instance variable">isSelected</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1024,6 +1458,10 @@
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Faster reload time&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="400448331243580" type="WeaponSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Fast shoot&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="155175594430712">
@@ -1042,6 +1480,10 @@
                                 <action id="-10" name="Set value" sid="990639613940222" type="WeaponSprite">
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Shoots three bullets at different angles&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="850839089667006" type="WeaponSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Triple shoot&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1062,6 +1504,10 @@
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Shoots one big bullet&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="894923772509787" type="WeaponSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Big shoot&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="717345978116289">
@@ -1081,6 +1527,10 @@
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Shoots two big bullets&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="301562894962497" type="WeaponSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Double big shoot&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="541320306346824">
@@ -1099,6 +1549,10 @@
                                 <action id="-10" name="Set value" sid="871615999805109" type="WeaponSprite">
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Shoots one super-bullet&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="561603973834126" type="WeaponSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Super shoot&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1144,6 +1598,10 @@
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Reduce damage by 10&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="301777741183888" type="ArmorSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Armor Level 1&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="727539299501824">
@@ -1162,6 +1620,10 @@
                                 <action id="-10" name="Set value" sid="201968961436674" type="ArmorSprite">
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Reduce damage by 20&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="689340934328500" type="ArmorSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Armor Level 2&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1182,6 +1644,10 @@
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Reduce damage by 30&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="297433405705864" type="ArmorSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Armor Level 3&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="854351784512593">
@@ -1200,6 +1666,10 @@
                                 <action id="-10" name="Set value" sid="444122687045335" type="ArmorSprite">
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Reduce damage by 40&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="387055831379485" type="ArmorSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Armor Level 4&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1220,6 +1690,10 @@
                                     <param id="0" name="Instance variable">Description</param>
                                     <param id="1" name="Value">&quot;Reduce damage by 50&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="206465063450481" type="ArmorSprite">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Armor Level 5&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="531424362589964">
@@ -1230,6 +1704,9 @@
                                 </action>
                                 <action id="0" name="Set text" sid="915552426827118" type="Description">
                                     <param id="0" name="Text">ArmorSprite.Description</param>
+                                </action>
+                                <action id="0" name="Set text" sid="277577311600870" type="ConfirmText">
+                                    <param id="0" name="Text">ArmorSprite.Name</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1263,17 +1740,17 @@
                 <event-block sid="384770562166277">
                     <conditions>
                         <condition id="0" name="On function" sid="752579128631078" type="Function">
-                            <param id="0" name="Name">&quot;BuyWeapon&quot;</param>
+                            <param id="0" name="Name">&quot;BuyGadget&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
                         <event-block sid="883799672164588">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="515698196975727" type="System">
-                                    <param id="0" name="Variable">WeaponLevel</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">ButtonWeaponsSelected</param>
+                                <condition id="-8" name="Compare two values" sid="515698196975727" type="System">
+                                    <param id="0" name="First value">BuyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Buy&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -1420,22 +1897,13 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="867013602962953">
-                    <conditions>
-                        <condition id="0" name="On function" sid="835017697185191" type="Function">
-                            <param id="0" name="Name">&quot;BuyArmor&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="207190290294123">
+                        <event-block sid="436015367087384">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="969604179442898" type="System">
-                                    <param id="0" name="Variable">ArmourLevel</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">ButtonArmorSelected</param>
+                                <condition id="-22" name="Else" sid="644427485920747" type="System" />
+                                <condition id="-8" name="Compare two values" sid="416231851487219" type="System">
+                                    <param id="0" name="First value">BuyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Armor&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -1582,27 +2050,13 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="588975262638220">
-                    <conditions>
-                        <condition id="0" name="On function" sid="549740175049396" type="Function">
-                            <param id="0" name="Name">&quot;BuyPotion&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="130753520885654">
+                        <event-block sid="784564976264789">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="845485712177412" type="System">
-                                    <param id="0" name="Variable">PlayerHP</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="512508056742967" type="System">
-                                    <param id="0" name="Variable">Money</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">50</param>
+                                <condition id="-22" name="Else" sid="586724288380986" type="System" />
+                                <condition id="-8" name="Compare two values" sid="194594073206940" type="System">
+                                    <param id="0" name="First value">BuyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Potion&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1637,17 +2091,219 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="323970398300276">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="762677917291984" type="Keyboard">
-                    <param id="0" name="Key">27 (Esc)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="336993640831541" type="System">
-                    <param id="0" name="Layout">Stage 1</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="923170284519958" title="ConfirmMenu">
+            <sub-events>
+                <event-block sid="563589401674553">
+                    <conditions>
+                        <condition id="0" name="On function" sid="927878970539709" type="Function">
+                            <param id="0" name="Name">&quot;setConfirmMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="814625574933688" type="System">
+                            <param id="0" name="Layer">&quot;ConfirmAndError&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="874841075281134">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="711818953841952" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Confirm&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="333059490081244" type="ConfirmText">
+                                    <param id="0" name="Text">&quot;Do you want to buy&quot;&amp;newline&amp;Function.Param(1)&amp;&quot;?&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="738043567243392">
+                                    <conditions>
+                                        <condition id="-34" name="Pick by evaluate" sid="483912581635424" type="System">
+                                            <param id="0" name="Object">ButtonConfirm</param>
+                                            <param id="1" name="Expression">ButtonConfirm.ID = 0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set visible" sid="557821108462849" type="ButtonConfirm">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="398472866782564" type="ButtonConfirm">
+                                            <param id="0" name="Instance variable">isVisible</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="837203836809769" type="ButtonConfirm">
+                                            <param id="0" name="Instance variable">isSelected</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="617519112376481">
+                                    <conditions>
+                                        <condition id="-34" name="Pick by evaluate" sid="527424224642227" type="System">
+                                            <param id="0" name="Object">ButtonConfirm</param>
+                                            <param id="1" name="Expression">ButtonConfirm.ID = 1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set visible" sid="503399031676397" type="ButtonConfirm">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="165829171820693" type="ButtonConfirm">
+                                            <param id="0" name="Instance variable">isVisible</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="581814590248888" type="ButtonConfirm">
+                                            <param id="0" name="Instance variable">isSelected</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="592318628239608">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="598799632283453" type="System" />
+                                <condition id="-8" name="Compare two values" sid="573720078480576" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Error&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="242033780863663">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="557692613640267" type="ButtonConfirm">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set visible" sid="451244512129134" type="ButtonConfirm">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="785237287715113" type="ButtonConfirm">
+                                            <param id="0" name="Instance variable">isVisible</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="279151836307277">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="761199381322243" type="System">
+                                            <param id="0" name="First value">Function.Param(1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;Sold&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="591811035795202" type="ConfirmText">
+                                            <param id="0" name="Text">&quot;Non puoi comprare il potenziamento perchè già lo possiedi&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="895100182161434">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="352195291412036" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="383246713848161" type="System">
+                                            <param id="0" name="First value">Function.Param(1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;Money&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="255064379083277" type="ConfirmText">
+                                            <param id="0" name="Text">&quot;Non hai abbastanza soldi per comprare il potenziamento selezionato&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="921555084969536">
+                            <conditions />
+                            <actions>
+                                <action id="-15" name="Set visible" sid="112774374285203" type="ConfirmText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="312011250581169">
+                    <conditions>
+                        <condition id="0" name="On function" sid="442118144974257" type="Function">
+                            <param id="0" name="Name">&quot;setInvisibleConfirmMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="975875829707953" type="System">
+                            <param id="0" name="Layer">&quot;ConfirmAndError&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="990148554794456" type="ButtonConfirm">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="286998106137382" type="ButtonConfirm">
+                            <param id="0" name="Instance variable">isVisible</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="972948779408204">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="980566031855099" type="System">
+                                    <param id="0" name="Variable">BuyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Buy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="901354846589362" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;BuyMenu&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="109472308138634">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="935645946172874" type="System" />
+                                <condition id="-14" name="Compare variable" sid="712289031027336" type="System">
+                                    <param id="0" name="Variable">BuyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Armor&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="389634830254060" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;ArmorMenu&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="880927039883856">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="221475794900124" type="System" />
+                                <condition id="-14" name="Compare variable" sid="161354519003703" type="System">
+                                    <param id="0" name="Variable">BuyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Potion&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="761652070767261" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Value">&quot;PotionMenu&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
