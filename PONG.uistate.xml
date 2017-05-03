@@ -10,9 +10,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
+        <layout order="1">Stage 2</layout>
         <layout order="3">Stage 1</layout>
-        <event-sheet order="1">General Event</event-sheet>
-        <event-sheet active="1" order="2">Stage 1 Event</event-sheet>
+        <event-sheet order="0">General Event</event-sheet>
+        <event-sheet active="1" order="2">Stage 2 Event</event-sheet>
+        <event-sheet order="4">Stage 1 Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -46,5 +48,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/CoinSprite/" />
         <folder expanded="1" path="animation-folder/Enemies/" />
         <folder expanded="1" path="animation-folder/Coin/" />
+        <folder expanded="1" path="animation-folder/Asteroid/" />
+        <folder expanded="1" path="animation-folder/aEnemies/" />
+        <folder expanded="1" path="animation-folder/aBullet/" />
+        <folder expanded="1" path="animation-folder/Asteroid2/" />
     </folders-expanded>
 </c2uistate>

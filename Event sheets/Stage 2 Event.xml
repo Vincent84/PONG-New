@@ -9,18 +9,222 @@
                 <condition id="-2" name="On start of layout" sid="551178300003213" type="System" />
             </conditions>
             <actions>
-                <action id="-10" name="Set value" sid="990547341493845" type="Weapon">
-                    <param id="0" name="Instance variable">Level</param>
-                    <param id="1" name="Value">WeaponLevel</param>
-                </action>
-                <action id="-10" name="Set value" sid="674035982721651" type="Bullet">
-                    <param id="0" name="Instance variable">Level</param>
-                    <param id="1" name="Value">WeaponLevel</param>
-                </action>
                 <action id="0" name="Call function" sid="161283907448096" type="Function">
                     <param id="0" name="Name">&quot;SetWeapon&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="0" name="Call function" sid="395285370054020" type="Function">
+                    <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action behavior="Platform" id="13" name="Set double-jump" sid="899849340706356" type="Character">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Turret" id="1" name="Add object to target" sid="295400984280246" type="aEnemies">
+                    <param id="0" name="Target">Character</param>
+                </action>
+                <action id="-9" name="Destroy" sid="931076410414280" type="Asteroid2" />
+            </actions>
+        </event-block>
+        <event-block sid="334407357974936">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="347812935117725" type="aEnemies" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="946621009733649" type="aEnemies">
+                    <param id="0" name="Object">aBullet</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="670182320600056" title="aBullet">
+            <sub-events>
+                <event-block sid="859995027093383">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="935292958960626" type="aBullet" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="756379545453026" type="aBullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="969566225622422">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="419746187361831" type="aBullet">
+                            <param id="0" name="Object">Character</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="949869558058320" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">25+Character.DecreaseDamage</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="252559220691875" type="aBullet" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="426831091564687">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="691890230865744" type="Bullet">
+                    <param id="0" name="Object">aEnemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="525443980664233" type="aEnemies">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Value">Bullet.Damage</param>
+                </action>
+                <action id="-9" name="Destroy" sid="969638818737705" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="491245589326694">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="638875933154342" type="aEnemies">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="656471070169474" type="aEnemies" />
+            </actions>
+        </event-block>
+        <event-block sid="528339588207186">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="290300880152300" type="aEnemies" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="875130900737450" type="aEnemies">
+                    <param id="0" name="Object">Coin</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="317111287330188">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="381757214380822" type="Character">
+                    <param id="0" name="Object">Coin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="886479633361724" type="Coin" />
+                <action id="-10" name="Add to" sid="445352774184021" type="System">
+                    <param id="0" name="Variable">Money</param>
+                    <param id="1" name="Value">8</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="346741511298206">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="539389650058259" type="Asteroid">
+                    <param id="0" name="Object">Character</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="729908322729850" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Value">25 + Character.DecreaseDamage</param>
+                </action>
+                <action id="-9" name="Destroy" sid="128293027284431" type="Asteroid" />
+            </actions>
+        </event-block>
+        <event-block sid="137438523566851">
+            <conditions>
+                <condition id="-18" name="On created" sid="871325080194782" type="Asteroid2" />
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="169136193423205" type="Asteroid2">
+                    <param id="0" name="Angle">random(0, 180)</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="217569198314152" type="Asteroid2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="793710567713003" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="746818078436950" type="Asteroid2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="883977973466480">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="447415016416706" type="Asteroid" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="863693482008717" type="Asteroid">
+                    <param id="0" name="Object">Asteroid2</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="758269073495057" type="Asteroid">
+                    <param id="0" name="Object">Asteroid2</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="395359065348828">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="235273906918493" type="Character">
+                    <param id="0" name="Object">Asteroid2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="555504057859251" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Value">15 + Character.DecreaseDamage</param>
+                </action>
+                <action id="-9" name="Destroy" sid="931781186654488" type="Asteroid2" />
+            </actions>
+        </event-block>
+        <event-block sid="902535021890218">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="419863178746828" type="Bullet">
+                    <param id="0" name="Object">Asteroid2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="210235926848216" type="Asteroid2">
+                    <param id="0" name="Object">Coin</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="902290495769726" type="Asteroid2" />
+                <action id="-9" name="Destroy" sid="276589024823298" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="158348899627735">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="371099638129396" type="Bullet">
+                    <param id="0" name="Object">Asteroid</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="685383574653636" type="Asteroid" />
+                <action id="-9" name="Destroy" sid="619826952638643" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="775840534536783">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="500447326398397" type="aBullet">
+                    <param id="0" name="Object">TiledBackground</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="453387393570426" type="aBullet" />
+            </actions>
+        </event-block>
+        <event-block sid="994096161520787">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="377533044332549" type="Bullet">
+                    <param id="0" name="Object">TiledBackground</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="209027883504265" type="Bullet" />
             </actions>
         </event-block>
     </events>

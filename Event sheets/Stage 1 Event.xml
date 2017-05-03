@@ -43,19 +43,31 @@
                     <param id="0" name="Object">Bounce</param>
                 </condition>
             </conditions>
-            <actions>
-                <action behavior="Bullet" id="4" name="Bounce off object" sid="309124000687305" type="Enemies">
-                    <param id="0" name="Object">Bounce</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="886867780304766">
-            <conditions>
-                <condition id="-3" inverted="1" name="Is on-screen" sid="113485565199007" type="Bullet" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="486370631962290" type="Bullet" />
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="637224263155517">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="447915392253974" type="Enemies" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="168572585936783" type="Enemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">Enemies.Direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="927514340880305">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="398653519512276" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="645777367253428" type="Enemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">-Enemies.Direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="192774920044278">
             <conditions>
@@ -73,6 +85,112 @@
                     <param id="0" name="Text">Enemies.HP</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="250059376411005">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="960045033065064" type="Bullet">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">Enemies.X</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="333010952587588">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="276480984622955" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="273842455433752" type="Enemies">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="131719274067679">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="741956628777683" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="520439334468155" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-Enemies.Direction</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="370675603255802" type="Enemies">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="763447900528028" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="638035616807335" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-Enemies.Direction</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="901112290987085">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="912279956111407" type="Bullet">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Enemies.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="913244014731522" type="Enemies">
+                            <param id="0" name="Vector Y">-200</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="933496089903017">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="972246214308441" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="369585243483502" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-Enemies.Direction</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="270622222641696" type="Enemies">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="994389759696411" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="567353602712766" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-Enemies.Direction</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="780378437960388">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="741545666050612" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="213194220347478" type="Enemies">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="614568949983037">
             <conditions>
@@ -109,27 +227,141 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="639094749106703">
+                    <conditions>
+                        <condition id="-1" inverted="1" name="Compare X" sid="925546095745742" type="Character">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Enemies.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="278964397595947" type="Character">
+                            <param id="0" name="Vector X">-3000</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="396232794009953" type="Character">
+                            <param id="0" name="Vector Y">-200</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="551709872590826">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="475600903534206" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="281328551638604" type="Character">
+                                    <param id="0" name="Vector Y">-700</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="866436991549348">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="667877095401134" type="Enemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="500164443560159" type="Enemies">
+                            <param id="0" name="Vector Y">-200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="860530559648407">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="307723060585964" type="Enemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="834960845471465" type="Enemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">-Enemies.Direction</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="590290943890741" type="Enemies">
+                            <param id="0" name="Vector Y">-200</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="505231118639605" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="766047237820726" type="Enemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">-Enemies.Direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="633193917745071">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="222755163416157" type="Character">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Enemies.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="432222503973650" type="Character">
+                            <param id="0" name="Vector X">3000</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="339456176514687" type="Character">
+                            <param id="0" name="Vector Y">-200</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="349195652234866">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="339063179440992" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="197400441242085" type="Character">
+                                    <param id="0" name="Vector Y">-700</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206133863127263">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="523123447212432" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="147259567983018" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-Enemies.Direction</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="904174412377465" type="Enemies">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="557905091431161" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="724892609292770" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-Enemies.Direction</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="697499533993225">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="821949293567807" type="Enemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="241711830193599" type="Enemies">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="227672909476991">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="374243943226015" type="System">
-                    <param id="0" name="Variable">PlayerHP</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-26" name="Restart layout" sid="416587230551024" type="System" />
-                <action id="-9" name="Set value" sid="593870204958059" type="System">
-                    <param id="0" name="Variable">PlayerHP</param>
-                    <param id="1" name="Value">100</param>
-                </action>
-                <action id="-11" name="Subtract from" sid="621309310013056" type="System">
-                    <param id="0" name="Variable">Money</param>
-                    <param id="1" name="Value">round(Money * 0.2)</param>
-                </action>
-            </actions>
         </event-block>
         <event-block sid="345242551276296">
             <conditions>
@@ -155,6 +387,44 @@
                     <param id="0" name="Variable">Money</param>
                     <param id="1" name="Value">4</param>
                 </action>
+            </actions>
+        </event-block>
+        <event-block sid="270072542174083">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="948212604112991" type="Enemies">
+                    <param id="0" name="Instance variable">Direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="124212844171202" type="Enemies">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="995810094363144">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="107891526902512" type="Enemies">
+                    <param id="0" name="Instance variable">Direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="252090261705695" type="Enemies">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="828634970590348">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="164970986922914" type="Bullet">
+                    <param id="0" name="Object">ErbaSuperMario</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="798558562027003" type="Bullet" />
             </actions>
         </event-block>
     </events>
