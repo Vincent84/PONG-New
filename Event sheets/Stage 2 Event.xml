@@ -24,6 +24,7 @@
                     <param id="0" name="Target">Character</param>
                 </action>
                 <action id="-9" name="Destroy" sid="931076410414280" type="Asteroid2" />
+                <action id="-9" name="Destroy" sid="447638914151892" type="ParticleBlood" />
             </actions>
         </event-block>
         <event-block sid="334407357974936">
@@ -55,12 +56,144 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="561724728896207" type="Function">
-                            <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;aBullet&quot;</param>
-                        </action>
                         <action id="-9" name="Destroy" sid="252559220691875" type="aBullet" />
+                        <action behavior="Flash" id="0" name="Flash" sid="772343672504766" type="LifeSprite">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="999503612716452">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="583053743056255" type="System">
+                                    <param id="0" name="First value">25 + Character.DecreaseDamage</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="573885783620804" type="System">
+                                    <param id="0" name="Variable">PlayerHP</param>
+                                    <param id="1" name="Value">25 + Character.DecreaseDamage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="768584175212405">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="652876286035026" type="Character">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">aBullet.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="729092214758601" type="Character">
+                                    <param id="0" name="Vector X">-3000</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="146032431124848" type="Character">
+                                    <param id="0" name="Frame number">6</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="686013393095029" type="Character">
+                                    <param id="0" name="Object">ParticleBlood</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="960689938780374">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="542690184802580" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="898972806349789" type="ParticleBlood">
+                                            <param id="0" name="Spray cone">180</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="334433516933594" type="ParticleBlood">
+                                            <param id="0" name="Angle">270</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="539277924371226" type="Character">
+                                            <param id="0" name="Vector Y">-300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="482940930129869">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="454701039333780" type="System" />
+                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="184428877297850" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="375240008074406" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="434826076800994" type="ParticleBlood">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="857192335154954">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="882370895845080" type="Character">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">aBullet.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="647086227885127" type="Character">
+                                    <param id="0" name="Vector X">3000</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="643710185736117" type="Character">
+                                    <param id="0" name="Frame number">6</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="904477683411045" type="Character">
+                                    <param id="0" name="Object">ParticleBlood</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="Image point">3</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="228370497620031">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="590055320288827" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="585163035286777" type="ParticleBlood">
+                                            <param id="0" name="Spray cone">180</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="450375037913878" type="ParticleBlood">
+                                            <param id="0" name="Angle">270</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="972001969324977" type="Character">
+                                            <param id="0" name="Vector Y">-300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="262393895458680">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="459185889368412" type="System" />
+                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="529564469948387" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="476833531823526" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="365101182280142">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="106522464106647" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="190575220638102" type="Character">
+                                    <param id="0" name="Frame number">ArmourLevel</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -76,6 +209,14 @@
                     <param id="1" name="Value">Bullet.Damage</param>
                 </action>
                 <action id="-9" name="Destroy" sid="969638818737705" type="Bullet" />
+                <action id="0" name="Spawn another object" sid="178134924729175" type="Bullet">
+                    <param id="0" name="Object">aParticles</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="2" name="Set spray cone" sid="822042164980450" type="aParticles">
+                    <param id="0" name="Spray cone">30</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="491245589326694">
@@ -88,16 +229,14 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="656471070169474" type="aEnemies" />
-            </actions>
-        </event-block>
-        <event-block sid="528339588207186">
-            <conditions>
-                <condition id="-19" name="On destroyed" sid="290300880152300" type="aEnemies" />
-            </conditions>
-            <actions>
                 <action id="0" name="Spawn another object" sid="875130900737450" type="aEnemies">
                     <param id="0" name="Object">Coin</param>
                     <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="260776674438617" type="aEnemies">
+                    <param id="0" name="Object">aParticles</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
                     <param id="2" name="Image point">0</param>
                 </action>
             </actions>
@@ -123,12 +262,144 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="491263001587800" type="Function">
-                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;Asteroid&quot;</param>
-                </action>
                 <action id="-9" name="Destroy" sid="128293027284431" type="Asteroid" />
+                <action behavior="Flash" id="0" name="Flash" sid="283913440147829" type="LifeSprite">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="849647752151533">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Compare two values" sid="906762581559769" type="System">
+                            <param id="0" name="First value">25 + Character.DecreaseDamage</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="855819978166879" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">25 + Character.DecreaseDamage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="276972654994847">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="948011487430984" type="Character">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">Asteroid.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="686532025808352" type="Character">
+                            <param id="0" name="Vector X">-3000</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="327636199871665" type="Character">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="874482894357606" type="Character">
+                            <param id="0" name="Object">ParticleBlood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="785185443557954">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="357087085658763" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set spray cone" sid="628637385296622" type="ParticleBlood">
+                                    <param id="0" name="Spray cone">180</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="610303085969033" type="ParticleBlood">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="276553391337056" type="Character">
+                                    <param id="0" name="Vector Y">-300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="383831412435346">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="945480455044394" type="System" />
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="204550370180255" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="572655637299214" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="881961125320685" type="ParticleBlood">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="568470063954031">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="799674137883381" type="Character">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Asteroid.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="832073332957081" type="Character">
+                            <param id="0" name="Vector X">3000</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="141186506503285" type="Character">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="550626974934519" type="Character">
+                            <param id="0" name="Object">ParticleBlood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="328766952815345">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="795155636996460" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set spray cone" sid="595092164924639" type="ParticleBlood">
+                                    <param id="0" name="Spray cone">180</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="224740747336195" type="ParticleBlood">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="470041549405244" type="Character">
+                                    <param id="0" name="Vector Y">-300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="131416611037822">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="889685985035173" type="System" />
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="906870740009390" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="100730223921495" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="536259774336795">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="871521580205170" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="798336205457996" type="Character">
+                            <param id="0" name="Frame number">ArmourLevel</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="137438523566851">
             <conditions>
@@ -173,12 +444,152 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="228078107406949" type="Function">
-                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;Asteroid2&quot;</param>
+                <action id="0" name="Spawn another object" sid="940841351734543" type="Asteroid2">
+                    <param id="0" name="Object">aParticles</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="1" name="Set rate" sid="213635699705803" type="aParticles">
+                    <param id="0" name="Rate">20</param>
                 </action>
                 <action id="-9" name="Destroy" sid="931781186654488" type="Asteroid2" />
+                <action behavior="Flash" id="0" name="Flash" sid="938700319251745" type="LifeSprite">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="605935469999296">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Compare two values" sid="535205095806115" type="System">
+                            <param id="0" name="First value">15 + Character.DecreaseDamage</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="499267164928903" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">15 + Character.DecreaseDamage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="199228372772719">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="968762291750936" type="Character">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">Asteroid2.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="331395522428985" type="Character">
+                            <param id="0" name="Vector X">-3000</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="695481144066668" type="Character">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="717435489346184" type="Character">
+                            <param id="0" name="Object">ParticleBlood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="922074042319408">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="119119113869457" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set spray cone" sid="203456854989542" type="ParticleBlood">
+                                    <param id="0" name="Spray cone">180</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="284124216886542" type="ParticleBlood">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="363520927928575" type="Character">
+                                    <param id="0" name="Vector Y">-300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="143803664688451">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="364804493230639" type="System" />
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="799481462079095" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="814305918262759" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="255152942484922" type="ParticleBlood">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="799797389288686">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="152162416443470" type="Character">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Asteroid2.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="704850519775205" type="Character">
+                            <param id="0" name="Vector X">3000</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="873561386619577" type="Character">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="711089168376686" type="Character">
+                            <param id="0" name="Object">ParticleBlood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="486116854992303">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="858661063806000" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set spray cone" sid="796305832578056" type="ParticleBlood">
+                                    <param id="0" name="Spray cone">180</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="850952798664176" type="ParticleBlood">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="858126909535153" type="Character">
+                                    <param id="0" name="Vector Y">-300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="272165871634933">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="439919812930019" type="System" />
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="553923436160548" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="972833743668251" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="575937304695690">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="856814658484365" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="198324562487904" type="Character">
+                            <param id="0" name="Frame number">ArmourLevel</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="902535021890218">
             <conditions>
@@ -187,10 +598,18 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Spawn another object" sid="836483876892477" type="Asteroid2">
+                    <param id="0" name="Object">aParticles</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="210235926848216" type="Asteroid2">
                     <param id="0" name="Object">Coin</param>
                     <param id="1" name="Layer">&quot;Level&quot;</param>
                     <param id="2" name="Image point">0</param>
+                </action>
+                <action id="1" name="Set rate" sid="662339925489109" type="aParticles">
+                    <param id="0" name="Rate">20</param>
                 </action>
                 <action id="-9" name="Destroy" sid="902290495769726" type="Asteroid2" />
                 <action id="-9" name="Destroy" sid="276589024823298" type="Bullet" />
@@ -234,23 +653,161 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="533121291665801" type="Function">
-                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;aEnemies&quot;</param>
+                <action behavior="Flash" id="0" name="Flash" sid="488675671139224" type="LifeSprite">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="836961272152235">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Compare two values" sid="983766518186375" type="System">
+                            <param id="0" name="First value">5 + Character.DecreaseDamage</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="358331052183301" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">5 + Character.DecreaseDamage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="848765224332506">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="774004530448850" type="Character">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">aEnemies.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="789870160215146" type="Character">
+                            <param id="0" name="Vector X">-3000</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="464770335387873" type="Character">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="470905059656120" type="Character">
+                            <param id="0" name="Object">ParticleBlood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="105399743932946">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="795197213714740" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set spray cone" sid="454588041254360" type="ParticleBlood">
+                                    <param id="0" name="Spray cone">180</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="943752607022330" type="ParticleBlood">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="320185021252992" type="Character">
+                                    <param id="0" name="Vector Y">-300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="983107343453095">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="193862127063954" type="System" />
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="396559817648056" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="168767317588879" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="410215434809112" type="ParticleBlood">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="160419890778519">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="972431190362587" type="Character">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">aEnemies.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="886855020256134" type="Character">
+                            <param id="0" name="Vector X">3000</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="607415088036734" type="Character">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="107375732382093" type="Character">
+                            <param id="0" name="Object">ParticleBlood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="801190130619480">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="277609787908586" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set spray cone" sid="585048895163083" type="ParticleBlood">
+                                    <param id="0" name="Spray cone">180</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="792852273171412" type="ParticleBlood">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="852480417565623" type="Character">
+                                    <param id="0" name="Vector Y">-300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="165963542237192">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="552906754227485" type="System" />
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="361618617375535" type="Character" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="304998706011285" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="468864234038996">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="161875884242703" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="726495027090724" type="Character">
+                            <param id="0" name="Frame number">ArmourLevel</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-group description="" sid="214193308717105" title="Collision Player">
             <sub-events>
-                <event-block sid="692099104865123">
+                <event-block disabled="1" sid="692099104865123">
                     <conditions>
                         <condition id="0" name="On function" sid="815866293201478" type="Function">
                             <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="533331692098956" type="LifeSprite">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                    </actions>
                     <sub-events>
-                        <event-block sid="112086653544581">
+                        <event-block disabled="1" sid="112086653544581">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="328604347877894" type="System">
                                     <param id="0" name="First value">Function.Param(0)</param>
@@ -260,7 +817,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="907998954518558">
+                                <event-block disabled="1" sid="907998954518558">
                                     <conditions>
                                         <condition id="-8" inverted="1" name="Compare two values" sid="885456544993162" type="System">
                                             <param id="0" name="First value">5 + Character.DecreaseDamage</param>
@@ -275,65 +832,123 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="191173621276973">
+                                <event-block disabled="1" sid="397622924963780">
                                     <conditions>
-                                        <condition id="-1" inverted="1" name="Compare X" sid="223852028788758" type="Character">
-                                            <param id="0" name="Comparison">4</param>
+                                        <condition id="-1" name="Compare X" sid="241965418017627" type="Character">
+                                            <param id="0" name="Comparison">2</param>
                                             <param id="1" name="X co-ordinate">aEnemies.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="212790379146807" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="476635739970429" type="Character">
                                             <param id="0" name="Vector X">-3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="392166828049204" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="338743471563759" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="190738854283942" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">2</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="114703799247589">
+                                        <event-block disabled="1" sid="847366683087910">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="706594024417699" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="233106618225731" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="768844437782778" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="642553067971950" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="134646403578269" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="448994527004511" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="346475865863895">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="955164468835053" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="863960540896885" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="185483699732402" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="258333948960573" type="ParticleBlood">
+                                                    <param id="0" name="Angle">180</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="169401204797337">
+                                <event-block disabled="1" sid="457394253436950">
                                     <conditions>
-                                        <condition id="-1" name="Compare X" sid="339837092586319" type="Character">
+                                        <condition id="-1" name="Compare X" sid="846182350056634" type="Character">
                                             <param id="0" name="Comparison">4</param>
                                             <param id="1" name="X co-ordinate">aEnemies.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="147588885481744" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="747659492039584" type="Character">
                                             <param id="0" name="Vector X">3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="672497122345771" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="860836045253093" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="849435850743897" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">3</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="236868703729792">
+                                        <event-block disabled="1" sid="453271990386651">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="304769935411665" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="483904366528454" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="652245702394053" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="619399408102206" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="733624995744972" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="482229095039787" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="167139544545859">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="974089302449480" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="800338286334668" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="715486646955491" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="714493129585776">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="114838695824198" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="199611740394882" type="Character">
+                                            <param id="0" name="Frame number">ArmourLevel</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="469651868287718">
+                        <event-block disabled="1" sid="469651868287718">
                             <conditions>
                                 <condition id="-22" name="Else" sid="143557723613983" type="System" />
                                 <condition id="-8" name="Compare two values" sid="223799364328065" type="System">
@@ -344,7 +959,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="108149373913677">
+                                <event-block disabled="1" sid="108149373913677">
                                     <conditions>
                                         <condition id="-8" inverted="1" name="Compare two values" sid="449876716959492" type="System">
                                             <param id="0" name="First value">25 + Character.DecreaseDamage</param>
@@ -359,65 +974,123 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="275073945451022">
+                                <event-block disabled="1" sid="522595611341642">
                                     <conditions>
-                                        <condition id="-1" inverted="1" name="Compare X" sid="979530877026577" type="Character">
-                                            <param id="0" name="Comparison">4</param>
+                                        <condition id="-1" name="Compare X" sid="812476865776943" type="Character">
+                                            <param id="0" name="Comparison">2</param>
                                             <param id="1" name="X co-ordinate">Asteroid.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="482967324998013" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="253379530118240" type="Character">
                                             <param id="0" name="Vector X">-3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="491495639615942" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="169428343779560" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="965807913920466" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">2</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="633890291031752">
+                                        <event-block disabled="1" sid="977143126534774">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="139325979144185" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="335613638265584" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="450931029341780" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="620919113746911" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="261597483815835" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="350259814549376" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="733328017756371">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="721817420714282" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="538796702223529" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="580775990282230" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="589318837631914" type="ParticleBlood">
+                                                    <param id="0" name="Angle">180</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="431928394008888">
+                                <event-block disabled="1" sid="728978158194372">
                                     <conditions>
-                                        <condition id="-1" name="Compare X" sid="146920044451804" type="Character">
+                                        <condition id="-1" name="Compare X" sid="423718716111695" type="Character">
                                             <param id="0" name="Comparison">4</param>
                                             <param id="1" name="X co-ordinate">Asteroid.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="125068788943098" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="735501673204326" type="Character">
                                             <param id="0" name="Vector X">3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="172293361222436" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="442255943166262" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="965417334514698" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">3</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="750504988033539">
+                                        <event-block disabled="1" sid="660562865125876">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="710850652004240" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="821797171829870" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="413781537730013" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="744386530290198" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="651136537632182" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="121570041288779" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="863361708727143">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="248690501778007" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="528382552789732" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="971454591962210" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="223654493054211">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="192401638630497" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="829194130897322" type="Character">
+                                            <param id="0" name="Frame number">ArmourLevel</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="488856636760239">
+                        <event-block disabled="1" sid="488856636760239">
                             <conditions>
                                 <condition id="-22" name="Else" sid="247417963480640" type="System" />
                                 <condition id="-8" name="Compare two values" sid="175055160069068" type="System">
@@ -428,7 +1101,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="646171509824732">
+                                <event-block disabled="1" sid="646171509824732">
                                     <conditions>
                                         <condition id="-8" inverted="1" name="Compare two values" sid="326745077150292" type="System">
                                             <param id="0" name="First value">15 + Character.DecreaseDamage</param>
@@ -443,65 +1116,123 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="979509671240038">
+                                <event-block disabled="1" sid="690134621212413">
                                     <conditions>
-                                        <condition id="-1" inverted="1" name="Compare X" sid="339927378338755" type="Character">
-                                            <param id="0" name="Comparison">4</param>
+                                        <condition id="-1" name="Compare X" sid="738911258061097" type="Character">
+                                            <param id="0" name="Comparison">2</param>
                                             <param id="1" name="X co-ordinate">Asteroid2.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="200334231323806" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="269451107478548" type="Character">
                                             <param id="0" name="Vector X">-3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="570065393062353" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="871000029414029" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="144679437698170" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">2</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="363721632487079">
+                                        <event-block disabled="1" sid="107810398162386">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="134208291433950" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="732355383688339" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="946875958303377" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="514793211465173" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="214714087199817" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="162468911103263" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="358662466957898">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="355269974302023" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="176605448700505" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="967145856814407" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="196550262819337" type="ParticleBlood">
+                                                    <param id="0" name="Angle">180</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="935442434204755">
+                                <event-block disabled="1" sid="810361164569595">
                                     <conditions>
-                                        <condition id="-1" name="Compare X" sid="779714389415123" type="Character">
+                                        <condition id="-1" name="Compare X" sid="685578615320311" type="Character">
                                             <param id="0" name="Comparison">4</param>
                                             <param id="1" name="X co-ordinate">Asteroid2.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="400680375603180" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="901056880369973" type="Character">
                                             <param id="0" name="Vector X">3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="491750455261765" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="934630495411571" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="138859016886806" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">3</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="114109456452017">
+                                        <event-block disabled="1" sid="182904427282773">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="964938245430872" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="495267548648725" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="924821317879425" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="682221967026691" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="211468922980449" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="518173700443457" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="116247524277234">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="480230685365403" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="332453928566815" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="333308656790267" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="135444319226386">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="969068396516545" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="299638580927061" type="Character">
+                                            <param id="0" name="Frame number">ArmourLevel</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="799223180729046">
+                        <event-block disabled="1" sid="799223180729046">
                             <conditions>
                                 <condition id="-22" name="Else" sid="196614607923368" type="System" />
                                 <condition id="-8" name="Compare two values" sid="788867977209864" type="System">
@@ -512,7 +1243,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="373118088658918">
+                                <event-block disabled="1" sid="373118088658918">
                                     <conditions>
                                         <condition id="-8" inverted="1" name="Compare two values" sid="405546151614912" type="System">
                                             <param id="0" name="First value">25 + Character.DecreaseDamage</param>
@@ -527,65 +1258,201 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="201342159499504">
+                                <event-block disabled="1" sid="774394162231783">
                                     <conditions>
-                                        <condition id="-1" inverted="1" name="Compare X" sid="687113522546225" type="Character">
-                                            <param id="0" name="Comparison">4</param>
+                                        <condition id="-1" name="Compare X" sid="326931279926736" type="Character">
+                                            <param id="0" name="Comparison">2</param>
                                             <param id="1" name="X co-ordinate">aBullet.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="553793563143559" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="800067708592930" type="Character">
                                             <param id="0" name="Vector X">-3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="877959136739603" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="536294989782847" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="796273650592163" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">2</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="621004324646641">
+                                        <event-block disabled="1" sid="107168959033147">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="271793253629046" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="656208147945292" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="449537285695928" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="580843093176013" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="451370819898389" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="623602899141656" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="610928190271288">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="143426925386499" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="918531117924543" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="955599770561497" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="100635836651547" type="ParticleBlood">
+                                                    <param id="0" name="Angle">180</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="875355903420039">
+                                <event-block disabled="1" sid="406398764007125">
                                     <conditions>
-                                        <condition id="-1" name="Compare X" sid="451807911405403" type="Character">
+                                        <condition id="-1" name="Compare X" sid="959526369574390" type="Character">
                                             <param id="0" name="Comparison">4</param>
                                             <param id="1" name="X co-ordinate">aBullet.X</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="351760069129986" type="Character">
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="625356763412549" type="Character">
                                             <param id="0" name="Vector X">3000</param>
                                         </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="341043543347070" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
+                                        <action id="5" name="Set frame" sid="169282800351730" type="Character">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="954519773168305" type="Character">
+                                            <param id="0" name="Object">ParticleBlood</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="Image point">3</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="277139396991704">
+                                        <event-block disabled="1" sid="334045494001595">
                                             <conditions>
-                                                <condition behavior="Platform" id="4" name="Is falling" sid="949479343120405" type="Character" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="887593447592212" type="Character" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="195017775062038" type="Character">
-                                                    <param id="0" name="Vector Y">-700</param>
+                                                <action id="2" name="Set spray cone" sid="848475222519243" type="ParticleBlood">
+                                                    <param id="0" name="Spray cone">180</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="201353190751016" type="ParticleBlood">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="225442740278682" type="Character">
+                                                    <param id="0" name="Vector Y">-300</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="257750298247721">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="573982597710625" type="System" />
+                                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="142812914192392" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="188187667452163" type="Character">
+                                                    <param id="0" name="Vector Y">-200</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="959094596207997">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="970503278294596" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="158557206781720" type="Character">
+                                            <param id="0" name="Frame number">ArmourLevel</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="938077427770648" title="PauseControl2">
+            <sub-events>
+                <event-block sid="496533514629344">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="740127879530158" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="267384351976973" type="Function">
+                            <param id="0" name="Name">&quot;setPauseWindow&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Alive&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="439947116221322">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="607173014796050" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="253623035292628" type="Function">
+                            <param id="0" name="Name">&quot;unpause&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="497437252092919">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="608284906954287" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="652465882365961" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="763125892386951" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="913613868272269">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="431411764383585" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="594851731840193" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="725467475352029" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="537458605566740">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="485912233003806" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="799835970413066" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="269551274237615" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Enter&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

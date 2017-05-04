@@ -23,6 +23,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
@@ -82,24 +83,42 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="261125523188120" speed="0">
+                <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="261125523188120" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
+                        <image-point name="Imagepoint 4" x="0.5" y="0.5" />
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="Weapon" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0" y="0.5" />
+                        <image-point name="Imagepoint 3" x="1" y="0.5" />
                     </frame>
                 </animation>
             </animation-folder>
@@ -350,6 +369,11 @@
         </object-type>
         <object-type name="LifeSprite" sid="564002973145654">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="135010446351875">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="963038658646099" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -361,6 +385,11 @@
         </object-type>
         <object-type name="CoinSprite" sid="626749073381568">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="225827307162947">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="808084637860135" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -551,11 +580,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Tilemap" sid="776897787464646">
-            <plugin id="Tilemap" />
-            <texture />
-            <tiles />
-        </object-type>
         <object-type name="TetrisGreen" sid="738382156290618">
             <plugin id="Tilemap" />
             <behaviors>
@@ -646,6 +670,9 @@
         </object-type>
         <object-type name="tEnemies" sid="643593010990032">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="301912785306824" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="274628790703451">
                     <behavior id="Platform" />
@@ -706,6 +733,40 @@
             <texture />
         </object-type>
         <object-type name="ParticleBlood" sid="883558406729726">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="ShopWindow" sid="425973766009925">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372243001443966" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="QuestionShop" sid="496213732486744">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ConfirmGoShop" sid="518482801833350">
+            <plugin id="Button" />
+            <instance-variables>
+                <instance-variable name="ID" sid="315236475386661" type="number" />
+                <instance-variable name="isSelected" sid="291914873140729" type="boolean" />
+            </instance-variables>
+        </object-type>
+        <object-type name="ShopBackground" sid="181583861552636">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="211950683126999" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemiesParticle" sid="371297081768958">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="aParticles" sid="972963195919263">
             <plugin id="Particles" />
             <texture />
         </object-type>
