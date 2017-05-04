@@ -3,8 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">100000</variable>
-        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">1000000000000000</variable>
+        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">100</variable>
+        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
         <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
         <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
         <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
@@ -638,7 +638,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-26" name="Restart layout" sid="648347530890232" type="System" />
+                        <action id="-25" name="Go to layout (by name)" sid="648347530890232" type="System">
+                            <param id="0" name="Layout">&quot;Shop&quot;</param>
+                        </action>
                         <action id="-9" name="Set value" sid="201511598182360" type="System">
                             <param id="0" name="Variable">PlayerHP</param>
                             <param id="1" name="Value">100</param>
@@ -652,7 +654,7 @@
                 <event-block sid="225396289155121">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="265361763685422" type="Keyboard">
-                            <param id="0" name="Key">32 (Space)</param>
+                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                         </condition>
                         <condition id="-8" name="Is boolean instance variable set" sid="212657704927329" type="Weapon">
                             <param id="0" name="Instance variable">ShotEnabled</param>

@@ -212,6 +212,7 @@
             </conditions>
             <actions />
             <sub-events>
+                <comment>Controlllo che evita che i danni ti curino</comment>
                 <event-block sid="285688170530637">
                     <conditions>
                         <condition id="-8" inverted="1" name="Compare two values" sid="674806287812324" type="System">

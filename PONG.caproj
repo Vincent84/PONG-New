@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
@@ -78,9 +79,6 @@
                 </behavior-type>
                 <behavior-type name="ScrollTo" sid="341898442725143">
                     <behavior id="scrollto" />
-                </behavior-type>
-                <behavior-type name="Solid" sid="895961414374928">
-                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -178,7 +176,9 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="922568880261495" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="1" y="0.5" />
+                    </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -551,18 +551,178 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Tilemap" sid="776897787464646">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="TetrisGreen" sid="738382156290618">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="168732434296174">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="863243700254605">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.0625" y="0" />
+                        <point x="0.9375" y="0" />
+                        <point x="0.9375" y="1" />
+                        <point x="0.0625" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="TetrisPink" sid="742562897094499">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="544218585030604">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="705634659840435">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.0625" y="0" />
+                        <point x="0.9375" y="0" />
+                        <point x="0.9375" y="1" />
+                        <point x="0.0625" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="TetrisYellow" sid="844883107988888">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="659021459668696">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="261271677543179">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.0625" y="0" />
+                        <point x="0.9375" y="0" />
+                        <point x="0.9375" y="1" />
+                        <point x="0.0625" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="TetrisBlue" sid="124637102815034">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="948018593790484">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="858783467564321">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.0625" y="0" />
+                        <point x="0.9375" y="0" />
+                        <point x="0.9375" y="1" />
+                        <point x="0.0625" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="tEnemies" sid="643593010990032">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="274628790703451">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="939267304291862" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TetrisOrange" sid="532844535390592">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="766800768860464">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="126294745071953">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.0625" y="0" />
+                        <point x="0.9375" y="0" />
+                        <point x="0.9375" y="1" />
+                        <point x="0.0625" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="TetrisRed" sid="265511808182178">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="426741953732022">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="145382140052611">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.0625" y="0" />
+                        <point x="0.9375" y="0" />
+                        <point x="0.9375" y="1" />
+                        <point x="0.0625" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="ParticleTEnemies" sid="602260326280112">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="ParticleBlood" sid="883558406729726">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Stage 1.xml</layout>
         <layout>Stage 2.xml</layout>
         <layout>Shop.xml</layout>
+        <layout>Stage 3.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Stage 1 Event.xml</event-sheet>
         <event-sheet>General Event.xml</event-sheet>
         <event-sheet>Stage 2 Event.xml</event-sheet>
         <event-sheet>Shop Event.xml</event-sheet>
+        <event-sheet>Stage 3 Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="3" />

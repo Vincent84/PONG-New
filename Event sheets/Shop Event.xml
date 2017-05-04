@@ -881,6 +881,9 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;None&quot;</param>
                                 </condition>
+                                <condition id="1" name="Is overlapping another object" sid="685768661116275" type="Character">
+                                    <param id="0" name="Object">SpawnMenu</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="2" name="Set visible" sid="987198165984507" type="ButtonMenu">

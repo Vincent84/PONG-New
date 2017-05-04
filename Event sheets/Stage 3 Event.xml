@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Stage 3 Event</name>
+    <events>
+        <include>General Event</include>
+        <event-block sid="523194781998997">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="186941141122384" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="280573451408731" type="Function">
+                    <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="475252884798745" type="Function">
+                    <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action behavior="Platform" id="13" name="Set double-jump" sid="746872224257840" type="Character">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="791438425607525" type="tEnemies">
+                    <param id="0" name="Input">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="600846718680918">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="701604751437453" type="Character">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">tEnemies.X+32</param>
+                </condition>
+                <condition id="-1" name="Compare X" sid="859599921544756" type="Character">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">tEnemies.X-32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="5" name="Set gravity" sid="266966750444016" type="tEnemies">
+                    <param id="0" name="Gravity">1500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="440363207125555">
+            <conditions>
+                <condition id="0" name="On function" sid="660485975657611" type="Function">
+                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="205795367124608">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="954492315981980" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;player&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="471965732788963">
+                            <conditions>
+                                <condition id="-1" inverted="1" name="Compare X" sid="166087991442785" type="Character">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="X co-ordinate">tEnemies.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="218548992416035" type="Character">
+                                    <param id="0" name="Vector X">-3000</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="580890433429014" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="148881921046269">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="704585486005094" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="868502587736959" type="Character">
+                                            <param id="0" name="Vector Y">-700</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="421531079319261">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="734481840103213" type="Character">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">tEnemies.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="554176576922781" type="Character">
+                                    <param id="0" name="Vector X">3000</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="358160853257675" type="Character">
+                                    <param id="0" name="Vector Y">-200</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="542550266045648">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="467536863372868" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="581193553565428" type="Character">
+                                            <param id="0" name="Vector Y">-700</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="264678544169483">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="975607185836492" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;tEnemies&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="526097098168149">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="845524554925192" type="tEnemies" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="970909127566495" type="tEnemies">
+                                    <param id="0" name="Object">ParticleTEnemies</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="689053742234508" type="tEnemies" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="870221462429921">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="352311024319762" type="System">
+                                            <param id="0" name="First value">40 + Character.DecreaseDamage</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="689996295932391" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">40 + Character.DecreaseDamage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="597579377986778">
+                            <conditions>
+                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="825248228324954" type="tEnemies" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="957099224651826">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="559163474597452" type="System">
+                                            <param id="0" name="First value">20 + Character.DecreaseDamage</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="822955084623867" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">20 + Character.DecreaseDamage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="245275371933414">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="909115112732002" type="Character">
+                    <param id="0" name="Object">tEnemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="660138628570682" type="Function">
+                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;player&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="308762296423507" type="Function">
+                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;tEnemies&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="243989050806292">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="737413875249316" type="Bullet">
+                    <param id="0" name="Object">tEnemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="713164791095348" type="Bullet">
+                    <param id="0" name="Object">ParticleBlood</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="296017422651801" type="Bullet" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

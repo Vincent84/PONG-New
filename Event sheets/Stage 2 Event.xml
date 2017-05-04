@@ -55,9 +55,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-11" name="Subtract from" sid="949869558058320" type="System">
-                            <param id="0" name="Variable">PlayerHP</param>
-                            <param id="1" name="Value">25+Character.DecreaseDamage</param>
+                        <action id="0" name="Call function" sid="561724728896207" type="Function">
+                            <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;aBullet&quot;</param>
                         </action>
                         <action id="-9" name="Destroy" sid="252559220691875" type="aBullet" />
                     </actions>
@@ -123,9 +123,9 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-11" name="Subtract from" sid="729908322729850" type="System">
-                    <param id="0" name="Variable">PlayerHP</param>
-                    <param id="1" name="Value">25 + Character.DecreaseDamage</param>
+                <action id="0" name="Call function" sid="491263001587800" type="Function">
+                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Asteroid&quot;</param>
                 </action>
                 <action id="-9" name="Destroy" sid="128293027284431" type="Asteroid" />
             </actions>
@@ -142,7 +142,7 @@
                     <param id="0" name="Collisions">0</param>
                 </action>
                 <action id="-16" name="Wait" sid="793710567713003" type="System">
-                    <param id="0" name="Seconds">2.0</param>
+                    <param id="0" name="Seconds">1.0</param>
                 </action>
                 <action id="11" name="Set collisions enabled" sid="746818078436950" type="Asteroid2">
                     <param id="0" name="Collisions">1</param>
@@ -173,9 +173,9 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="555504057859251" type="System">
-                    <param id="0" name="Variable">PlayerHP</param>
-                    <param id="1" name="Value">15 + Character.DecreaseDamage</param>
+                <action id="0" name="Call function" sid="228078107406949" type="Function">
+                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Asteroid2&quot;</param>
                 </action>
                 <action id="-9" name="Destroy" sid="931781186654488" type="Asteroid2" />
             </actions>
@@ -227,5 +227,367 @@
                 <action id="-9" name="Destroy" sid="209027883504265" type="Bullet" />
             </actions>
         </event-block>
+        <event-block sid="545528210451559">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="495022264697860" type="Character">
+                    <param id="0" name="Object">aEnemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="533121291665801" type="Function">
+                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;aEnemies&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="214193308717105" title="Collision Player">
+            <sub-events>
+                <event-block sid="692099104865123">
+                    <conditions>
+                        <condition id="0" name="On function" sid="815866293201478" type="Function">
+                            <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="112086653544581">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="328604347877894" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;aEnemies&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="907998954518558">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="885456544993162" type="System">
+                                            <param id="0" name="First value">5 + Character.DecreaseDamage</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="580933093472207" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">5 + Character.DecreaseDamage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="191173621276973">
+                                    <conditions>
+                                        <condition id="-1" inverted="1" name="Compare X" sid="223852028788758" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">aEnemies.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="212790379146807" type="Character">
+                                            <param id="0" name="Vector X">-3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="392166828049204" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="114703799247589">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="706594024417699" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="768844437782778" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="169401204797337">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="339837092586319" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">aEnemies.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="147588885481744" type="Character">
+                                            <param id="0" name="Vector X">3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="672497122345771" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="236868703729792">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="304769935411665" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="652245702394053" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="469651868287718">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="143557723613983" type="System" />
+                                <condition id="-8" name="Compare two values" sid="223799364328065" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Asteroid&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="108149373913677">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="449876716959492" type="System">
+                                            <param id="0" name="First value">25 + Character.DecreaseDamage</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="816247965162784" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">25 + Character.DecreaseDamage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="275073945451022">
+                                    <conditions>
+                                        <condition id="-1" inverted="1" name="Compare X" sid="979530877026577" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Asteroid.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="482967324998013" type="Character">
+                                            <param id="0" name="Vector X">-3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="491495639615942" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="633890291031752">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="139325979144185" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="450931029341780" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="431928394008888">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="146920044451804" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Asteroid.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="125068788943098" type="Character">
+                                            <param id="0" name="Vector X">3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="172293361222436" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="750504988033539">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="710850652004240" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="413781537730013" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="488856636760239">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="247417963480640" type="System" />
+                                <condition id="-8" name="Compare two values" sid="175055160069068" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Asteroid2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="646171509824732">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="326745077150292" type="System">
+                                            <param id="0" name="First value">15 + Character.DecreaseDamage</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="270214593464835" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">15 + Character.DecreaseDamage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="979509671240038">
+                                    <conditions>
+                                        <condition id="-1" inverted="1" name="Compare X" sid="339927378338755" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Asteroid2.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="200334231323806" type="Character">
+                                            <param id="0" name="Vector X">-3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="570065393062353" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="363721632487079">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="134208291433950" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="946875958303377" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="935442434204755">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="779714389415123" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Asteroid2.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="400680375603180" type="Character">
+                                            <param id="0" name="Vector X">3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="491750455261765" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="114109456452017">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="964938245430872" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="924821317879425" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="799223180729046">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="196614607923368" type="System" />
+                                <condition id="-8" name="Compare two values" sid="788867977209864" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;aBullet&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="373118088658918">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="405546151614912" type="System">
+                                            <param id="0" name="First value">25 + Character.DecreaseDamage</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="903984651844022" type="System">
+                                            <param id="0" name="Variable">PlayerHP</param>
+                                            <param id="1" name="Value">25 + Character.DecreaseDamage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="201342159499504">
+                                    <conditions>
+                                        <condition id="-1" inverted="1" name="Compare X" sid="687113522546225" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">aBullet.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="553793563143559" type="Character">
+                                            <param id="0" name="Vector X">-3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="877959136739603" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="621004324646641">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="271793253629046" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="449537285695928" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="875355903420039">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="451807911405403" type="Character">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">aBullet.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="351760069129986" type="Character">
+                                            <param id="0" name="Vector X">3000</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="341043543347070" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="277139396991704">
+                                            <conditions>
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="949479343120405" type="Character" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="195017775062038" type="Character">
+                                                    <param id="0" name="Vector Y">-700</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
