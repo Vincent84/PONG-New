@@ -874,6 +874,37 @@
         <object-type name="PortalFooter" sid="672599487248711">
             <plugin id="Text" />
         </object-type>
+        <object-type name="sTerreno" sid="621789122019896">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="368444658164090">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="sEnemies" sid="567094154083274">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Direction" sid="321967859597423" type="string" />
+                <instance-variable name="HP" sid="456999758747739" type="number" />
+                <instance-variable name="Row" sid="977026052912057" type="number" />
+                <instance-variable name="Column" sid="431441037269245" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="548644449786922" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="230565800589525">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895465919648426" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -882,6 +913,7 @@
         <layout>Shop.xml</layout>
         <layout>Stage 3.xml</layout>
         <layout>Pong.xml</layout>
+        <layout>Stage 4.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Stage 1 Event.xml</event-sheet>
@@ -890,6 +922,7 @@
         <event-sheet>Shop Event.xml</event-sheet>
         <event-sheet>Stage 3 Event.xml</event-sheet>
         <event-sheet>Pong Event.xml</event-sheet>
+        <event-sheet>Stage 4 Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="3" />

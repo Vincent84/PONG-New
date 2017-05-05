@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Stage 4 Event</name>
+    <events>
+        <include>General Event</include>
+        <event-block sid="713574099695805">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="177882369121429" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="971472826617467" type="Function">
+                    <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="349054740281685" type="Function">
+                    <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="406632671537453" title="Stage4Portal">
+            <sub-events>
+                <event-block sid="405566502880734">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="234313487929303" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="165568515153117" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="924408661053512">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="483289917790901" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="519444061106505" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Pong&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="846420038141058">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="258305042114374" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="129862082084715" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="333468198619681" title="sEnemies">
+            <sub-events>
+                <event-block sid="969851730694576">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="864645384972346" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="723061967925472">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="386763370779617" type="sEnemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="338207107612767" type="sEnemies">
+                                    <param id="0" name="Instance variable">Column</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="871766011961405" type="sEnemies">
+                                    <param id="0" name="X">Self.X + 32</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="198087066742769" type="sEnemies">
+                                    <param id="0" name="Instance variable">Column</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="219350746262406">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="856737278002241" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="496370689607897" type="sEnemies">
+                                    <param id="0" name="Instance variable">Column</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="900620348885069" type="sEnemies">
+                                    <param id="0" name="Instance variable">Row</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="453838001222726" type="sEnemies">
+                                    <param id="0" name="Y">Self.Y + 32</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="914514333188229" type="sEnemies">
+                                    <param id="0" name="Instance variable">Row</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

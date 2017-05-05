@@ -623,7 +623,7 @@
                             <actions>
                                 <action id="0" name="Call function" sid="666939100659020" type="Function">
                                     <param id="0" name="Name">&quot;setLayout&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Pong&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Stage4&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
