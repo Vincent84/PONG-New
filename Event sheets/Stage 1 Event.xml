@@ -17,9 +17,6 @@
                     <param id="0" name="Name">&quot;SetArmour&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Set text" sid="451522438465111" type="Text2">
-                    <param id="0" name="Text">Enemies.HP</param>
-                </action>
             </actions>
         </event-block>
         <event-block sid="832209844199285">
@@ -577,11 +574,49 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="975946657115030">
-            <conditions>
-                <condition id="-18" name="On created" sid="339812853395545" type="ParticleBlood" />
-            </conditions>
-            <actions />
-        </event-block>
+        <event-group description="" sid="238847736853547" title="Stage1Portal">
+            <sub-events>
+                <event-block sid="391814610153834">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="469654994287085" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="773778505133692" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="550993746905252" type="PortalFooter">
+                            <param id="0" name="Color">rgb(0, 0, 0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="721313914754270">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="282949176083818" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="425119059196511" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Stage2&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="803736782735411">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="172925148318572" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="947814358360548" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Pong Event</name>
+    <events>
+        <include>General Event</include>
+        <event-block sid="613377011480358">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="130572254500021" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="323804139711535" type="Function">
+                    <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="249909500123582" type="Function">
+                    <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-13" name="Set boolean" sid="478422263050030" type="Weapon">
+                    <param id="0" name="Instance variable">ShotEnabled</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="380471720459372" type="Ball">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="289010765184825" type="Character">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-2" name="Set Y" sid="837251068007065" type="Character">
+                    <param id="0" name="Y">192</param>
+                </action>
+                <action id="-2" name="Set Y" sid="802193042013710" type="BossPong">
+                    <param id="0" name="Y">160</param>
+                </action>
+                <action id="-9" name="Destroy" sid="336830786209544" type="aParticles" />
+                <action id="-15" name="Set visible" sid="814632679588898" type="CoinSprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="180764261992673" type="Coins">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-1" name="Set X" sid="391188447733169" type="LifeSprite">
+                    <param id="0" name="X">193</param>
+                </action>
+                <action id="-1" name="Set X" sid="120905343579552" type="Life">
+                    <param id="0" name="X">Life.X + 164</param>
+                </action>
+                <action id="0" name="Set text" sid="619158892465910" type="LifeBoss">
+                    <param id="0" name="Text">BossPong.HP&amp;&quot; HP&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="270359952175300" type="System">
+                    <param id="0" name="Layer">&quot;Vitctory&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-41" name="Wait for signal" sid="825988069356373" type="System">
+                    <param id="0" name="Tag">&quot;Start&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="614761395445151" type="System">
+                    <param id="0" name="Layer">&quot;Start&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="487101530730104" type="Character">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="134048035080598" type="Weapon">
+                    <param id="0" name="Instance variable">ShotEnabled</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="716534006221494" type="Ball">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="320021004325188" type="Ball">
+                    <param id="0" name="Angle">random(170, 190)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="479086880899564" title="Ball">
+            <sub-events>
+                <event-block any="1" sid="202160468042744">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="769042478924115" type="Ball">
+                            <param id="0" name="Object">Character</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="838409645660040" type="Ball">
+                            <param id="0" name="Object">Character</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="655105039404002">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="208824363997904" type="Character">
+                                    <param id="0" name="Instance variable">DirectionPong</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Up&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="177048535828358" type="Ball">
+                                    <param id="0" name="Angle">random(320,330)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="765933728290890" type="Ball">
+                                    <param id="0" name="Speed">(0.05*Character.8Direction.Speed)+Ball.Bullet.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="166228933599798">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="583405853350903" type="Character">
+                                    <param id="0" name="Instance variable">DirectionPong</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Down&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="647945978361895" type="Ball">
+                                    <param id="0" name="Angle">random(20,30)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="535172943685891" type="Ball">
+                                    <param id="0" name="Speed">(0.1*Character.8Direction.Speed)+Ball.Bullet.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="954839096734080">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="963251556645731" type="Ball">
+                            <param id="0" name="Object">BossPong</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="948642819639824" type="Ball">
+                            <param id="0" name="Object">BossPong</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="708980923430312">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="819179487998901" type="Ball">
+                            <param id="0" name="Object">BouncePong</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="636163822918114" type="Ball">
+                            <param id="0" name="Angle">-Ball.Bullet.AngleOfMotion</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="537455304924546">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="230371066507382" type="Ball" />
+                        <condition id="-7" name="Compare instance variable" sid="866291782527921" type="BossPong">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="232188962247055" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="0" name="Stop" sid="952653735659428" type="BossPong" />
+                        <action id="-2" name="Set Y" sid="949615736270346" type="Character">
+                            <param id="0" name="Y">192</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="934818916605796" type="BossPong">
+                            <param id="0" name="Y">160</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="500424158644286" type="System">
+                            <param id="0" name="Group name">&quot;BossPongControls&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="305868607077269">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="383200767257520" type="Ball">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">240</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="692809124168645" type="System">
+                                    <param id="0" name="Variable">PlayerHP</param>
+                                    <param id="1" name="Value">55 + Character.DecreaseDamage</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="407798316158461" type="LifeSprite">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="522896918088490" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotEnabled</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="197448310140682" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="926068821118655" type="System">
+                                    <param id="0" name="Object to create">Ball</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="X">240</param>
+                                    <param id="3" name="Y">160</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="748516662756872" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotEnabled</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="168226623369043" type="Ball">
+                                    <param id="0" name="Angle">random(35, -35)</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="275254112733810" type="System">
+                                    <param id="0" name="Group name">&quot;BossPongControls&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="343202464688865">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="559360596894009" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="194309645920352" type="BossPong">
+                                    <param id="0" name="Instance variable">HP</param>
+                                    <param id="1" name="Value">300</param>
+                                </action>
+                                <action id="0" name="Set text" sid="993438553489063" type="LifeBoss">
+                                    <param id="0" name="Text">BossPong.HP&amp;&quot; HP&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="956773306459644" type="BossHP">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="837856010507644" type="Weapon">
+                                    <param id="0" name="Instance variable">ShotEnabled</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="743484693250597">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="188706374772249" type="BossPong">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="250134642861066" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="675593803249293" type="System">
+                                            <param id="0" name="Object to create">Ball</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="X">240</param>
+                                            <param id="3" name="Y">160</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="665929033488381" type="Weapon">
+                                            <param id="0" name="Instance variable">ShotEnabled</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="795341308341488" type="Ball">
+                                            <param id="0" name="Angle">random(155, 205)</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="346404143385142" type="System">
+                                            <param id="0" name="Group name">&quot;BossPongControls&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="236651722076540">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="486246218256582" type="BossPong">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="811626173473027" type="BossPong">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="108484054881320" type="LifeBoss">
+                            <param id="0" name="Text">BossPong.HP&amp;&quot; HP&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="260508738422431" title="PlayerControls">
+            <sub-events>
+                <event-block sid="595362593707820">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="777032158583371" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="796887617318312" type="Character">
+                            <param id="0" name="Instance variable">DirectionPong</param>
+                            <param id="1" name="Value">&quot;Up&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="998167737419217">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="856024111937521" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="743235345587924" type="Character">
+                            <param id="0" name="Instance variable">DirectionPong</param>
+                            <param id="1" name="Value">&quot;Down&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="265933280938692">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="245408292646140" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="315739002633630" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="867896518574669" type="System">
+                            <param id="0" name="Tag">&quot;Start&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="135177674109154">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="940057300316655" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="550131087164432" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="801126735079548" type="Weapon">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="103710685271846" title="BossPongControls">
+            <sub-events>
+                <event-block sid="326644970211055">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="945561374383139" type="BossPong">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">Ball.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="652881770645602" type="BossPong">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="240376310756955">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="897138820489017" type="BossPong">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">Ball.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="849718715491248" type="BossPong">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="993852497001474">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="691791311173566" type="BossPong">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">Ball.Y</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="928021600190191" type="System">
+                            <param id="0" name="First value">BossPong.X - Ball.X</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="0" name="Stop" sid="922913075295940" type="BossPong" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="776488035405172" title="PauseControlBoss">
+            <sub-events>
+                <event-block sid="477800760062694">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="267158664923275" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="758435636537767" type="Function">
+                            <param id="0" name="Name">&quot;setPauseWindow&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Alive&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="929306573033947">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="645739782815692" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="822945023216988" type="Function">
+                            <param id="0" name="Name">&quot;unpause&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="554906182080149">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="915293791545737" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="237017256454399" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="272313552939745" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="716796646495741">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="859606828730117" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="528155616077105" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="561751919696537" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="987103490326331">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="706252288215418" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="205444700386394" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="100764914294760" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Enter&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="822891260477615" title="BossEvents">
+            <sub-events>
+                <event-block sid="787087455956478">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="848200371209625" type="Bullet">
+                            <param id="0" name="Object">BossPong</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="999359842812863" type="BossHP">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="100175162436954" type="BossPong">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">Bullet.Damage</param>
+                        </action>
+                        <action id="0" name="Set text" sid="167423782891059" type="LifeBoss">
+                            <param id="0" name="Text">BossPong.HP&amp;&quot; HP&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="909427653293634" type="Bullet" />
+                        <action id="0" name="Spawn another object" sid="970237339166894" type="Bullet">
+                            <param id="0" name="Object">aParticles</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="151174202015188">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="835686467378181" type="BossPong">
+                                    <param id="0" name="Instance variable">HP</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="995573711683695" type="BossPong">
+                                    <param id="0" name="Instance variable">HP</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="725963389088624" type="LifeBoss">
+                                    <param id="0" name="Text">BossPong.HP&amp;&quot; HP&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="999710486726958">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="144585468453339" type="BossPong" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="869387900497652" type="System">
+                            <param id="0" name="Layer">&quot;Vitctory&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="664880220802147" type="Weapon">
+                            <param id="0" name="Instance variable">ShotEnabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="448068008291916" type="Character">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="297309466361458">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="445198115423909" type="BossPong">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="612481512316060" type="BossPong">
+                            <param id="0" name="Object">aParticles</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="739632425819163" type="BossPong" />
+                        <action id="-9" name="Destroy" sid="892401266132102" type="Ball" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="108356469683963">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="471467316658736" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="757466977043493" type="System">
+                    <param id="0" name="Layer">&quot;Vitctory&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="821269020751684" type="System">
+                    <param id="0" name="Layout">Shop</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1456,5 +1456,46 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="176518216276205" title="Stage2Portal">
+            <sub-events>
+                <event-block sid="833521810513060">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="211044265544902" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="448762669069555" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="276468546421625">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="690224334711475" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="899194035184414" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Stage3&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="727705813790504">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="690577753565405" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="888896318704841" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

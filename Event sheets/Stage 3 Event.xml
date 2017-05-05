@@ -201,7 +201,7 @@
                             <actions>
                                 <action id="-11" name="Subtract from" sid="894005176776681" type="System">
                                     <param id="0" name="Variable">PlayerHP</param>
-                                    <param id="1" name="Value">40 + Character.DecreaseDamage</param>
+                                    <param id="1" name="Value">30 + Character.DecreaseDamage</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -600,5 +600,46 @@
                 <action id="-9" name="Destroy" sid="843598642294207" type="Bullet" />
             </actions>
         </event-block>
+        <event-group description="" sid="569409337653657" title="Stage3Portal">
+            <sub-events>
+                <event-block sid="490731708582349">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="275639065956710" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="280677637893084" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="221942453601841">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="319953494245718" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="666939100659020" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Pong&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="203550550519451">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="827159075116243" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="326598941546550" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

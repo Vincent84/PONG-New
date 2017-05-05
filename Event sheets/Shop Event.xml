@@ -23,11 +23,15 @@
                     <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="0" name="Set text" sid="928233678306769" type="ShopControls">
-                    <param id="0" name="Text">&quot;Shop Controls:&quot;&amp;newline&amp;&quot;Press R to select&quot;&amp;newline&amp;&quot;Press E to buy&quot;&amp;newline&amp;&quot;Press A to go back&quot;&amp;newline&amp;&quot;Press Arrows to browse&quot;&amp;newline&amp;&quot;Press Esc to quit the shop&quot;</param>
+                    <param id="0" name="Text">&quot;Go near the Vendor and press &apos;&apos;Enter&apos;&apos; to open the shop&quot;&amp;newline&amp;&quot;Press &apos;&apos;Enter&apos;&apos; to select and &apos;&apos;Esc&apos;&apos; to go back or exit the shop&quot;&amp;newline&amp;&quot;Use the arrows to browse the shop&quot; </param>
                 </action>
                 <action id="-4" name="Set layer visible" sid="113897979686517" type="System">
                     <param id="0" name="Layer">&quot;ConfirmAndError&quot;</param>
                     <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="124558057246106" type="Weapon">
+                    <param id="0" name="Instance variable">ShotEnabled</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -2305,6 +2309,47 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="997880123582215" title="ShopPortal">
+            <sub-events>
+                <event-block sid="503485229076881">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="964888456007991" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="843501803644551" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="651263434741167">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="896834203073558" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="890993868994641" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Stage1&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="835370188043414">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="603441894008988" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="611721577108319" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

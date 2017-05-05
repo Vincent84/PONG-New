@@ -4,9 +4,9 @@
     <name>General Event</name>
     <events>
         <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">100</variable>
-        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">10000000000000000</variable>
+        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
         <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
-        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">1</variable>
+        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
         <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
             <sub-events>
@@ -651,6 +651,8 @@
                             <param id="1" name="Parameter {n}">&quot;Dead&quot;</param>
                         </action>
                         <action id="-9" name="Destroy" sid="282871061003146" type="Character" />
+                        <action id="-9" name="Destroy" sid="918611046862487" type="Weapon" />
+                        <action id="-9" name="Destroy" sid="853132180796196" type="Bullet" />
                         <action id="0" name="Set text" sid="401045519168642" type="QuestionShop">
                             <param id="0" name="Text">&quot;You died!&quot;&amp;newline&amp;&quot;You will now go back to the shop and lose 20% of your money&quot;</param>
                         </action>
@@ -860,6 +862,9 @@
                             <actions>
                                 <action id="2" name="Set visible" sid="477956607838323" type="ConfirmGoShop">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="292893652030639" type="QuestionShop">
+                                    <param id="0" name="Text">&quot;Are you sure you want to go back to shop?&quot;&amp;newline&amp;&quot;(ATTENTION! you will restart from the first world)&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -1115,6 +1120,90 @@
                             <param id="1" name="Value">&quot;2px solid white&quot;</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="963293134823093" title="GeneralPortal">
+            <sub-events>
+                <event-block sid="527922653994695">
+                    <conditions>
+                        <condition id="0" name="On function" sid="755721929380629" type="Function">
+                            <param id="0" name="Name">&quot;setLayout&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="245093766156599">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="155319127302381" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Stage1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="763957542448173" type="System">
+                                    <param id="0" name="Layout">Stage 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="169903927143843">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="316024011696738" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Stage2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="895029550851405" type="System">
+                                    <param id="0" name="Layout">Stage 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="435198127175397">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="959039124506648" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Stage3&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="925196846098086" type="System">
+                                    <param id="0" name="Layout">Stage 3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="634326768912505">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="969702476196536" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Stage4&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="922528217515220" type="System">
+                                    <param id="0" name="Layout">Pong</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="584337661894578">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="834233759773183" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Pong&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="155027255222235" type="System">
+                                    <param id="0" name="Layout">Pong</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

@@ -35,6 +35,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event collapsed="1" sid="212788823181794" />
         <event collapsed="1" sid="236557081790843" />
         <event collapsed="1" sid="867022485564020" />
+        <event collapsed="1" sid="400235591149112" />
         <event collapsed="1" sid="540115115559016" />
         <event collapsed="1" sid="745444123617528" />
         <event collapsed="1" sid="382130954048436" />
@@ -56,5 +57,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event collapsed="1" sid="923170284519958" />
         <event collapsed="1" sid="563589401674553" />
         <event collapsed="1" sid="312011250581169" />
+        <event collapsed="1" sid="997880123582215" />
+        <event collapsed="1" sid="503485229076881" />
     </events>
 </c2uistate>

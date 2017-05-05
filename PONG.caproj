@@ -23,6 +23,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
@@ -70,6 +71,7 @@
                 <instance-variable name="HP" sid="817500914535135" type="number" />
                 <instance-variable name="Armour" sid="614655345008467" type="number" />
                 <instance-variable name="DecreaseDamage" sid="605396512096389" type="number" />
+                <instance-variable name="DirectionPong" sid="281194648402337" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="761168117542036">
@@ -80,6 +82,9 @@
                 </behavior-type>
                 <behavior-type name="ScrollTo" sid="341898442725143">
                     <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="118605710002167">
+                    <behavior id="EightDir" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -770,6 +775,105 @@
             <plugin id="Particles" />
             <texture />
         </object-type>
+        <object-type name="Centrocampo" sid="281360091098734">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="BossPong" sid="743171114751828">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="290375394241206" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="687770150413157">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="203153449595721">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="410525659603677" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Ball" sid="437926934488877">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="370568331306258">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="294007756028665">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="191461453395585" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BouncePong" sid="795611196822655">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="790770417346338" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BossHP" sid="757229271987168">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="807601006318702">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="248480918971970" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LifeBoss" sid="213595478659780">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SpriteIconBoss" sid="453271334422034">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="560309647002284" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteTrasparentBoss" sid="813851954585984">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="374519543665707" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StartBossFightText" sid="176396409463766">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text5" sid="149899146140071">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Portal" sid="472217825918235">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="456367547388801" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Portalheader" sid="490941193154758">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PortalFooter" sid="672599487248711">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -777,6 +881,7 @@
         <layout>Stage 2.xml</layout>
         <layout>Shop.xml</layout>
         <layout>Stage 3.xml</layout>
+        <layout>Pong.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Stage 1 Event.xml</event-sheet>
@@ -784,6 +889,7 @@
         <event-sheet>Stage 2 Event.xml</event-sheet>
         <event-sheet>Shop Event.xml</event-sheet>
         <event-sheet>Stage 3 Event.xml</event-sheet>
+        <event-sheet>Pong Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="3" />
