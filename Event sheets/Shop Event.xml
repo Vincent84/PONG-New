@@ -2210,7 +2210,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="591811035795202" type="ConfirmText">
-                                            <param id="0" name="Text">&quot;Non puoi comprare il potenziamento perchè già lo possiedi&quot;</param>
+                                            <param id="0" name="Text">&quot;You can&apos;t buy this item because you already have it!&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2225,7 +2225,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="255064379083277" type="ConfirmText">
-                                            <param id="0" name="Text">&quot;Non hai abbastanza soldi per comprare il potenziamento selezionato&quot;</param>
+                                            <param id="0" name="Text">&quot;You don&apos;t have enough money to buy this item!&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>

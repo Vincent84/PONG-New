@@ -3,11 +3,11 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">100</variable>
-        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">1000000000</variable>
+        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">60</variable>
+        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
         <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
-        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">5</variable>
-        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">5</variable>
+        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">1</variable>
+        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">1</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
             <sub-events>
                 <event-block sid="403022564349946">
@@ -1204,7 +1204,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-2" name="Go to layout" sid="922528217515220" type="System">
+                                <action id="-2" name="Go to layout" sid="470232509136987" type="System">
                                     <param id="0" name="Layout">Stage 4</param>
                                 </action>
                             </actions>

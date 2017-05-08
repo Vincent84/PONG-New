@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Start Event</name>
+    <events>
+        <event-group description="" sid="255485573233277" title="ButtonStart">
+            <sub-events>
+                <event-block sid="518806023670545">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="149422728050571" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set CSS style" sid="540356286338681" type="StartButton">
+                            <param id="0" name="Property name">&quot;color&quot;</param>
+                            <param id="1" name="Value">&quot;white&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="911830473399806" type="StartButton">
+                            <param id="0" name="Property name">&quot;background&quot;</param>
+                            <param id="1" name="Value">&quot;black&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="622373080786090" type="StartButton">
+                            <param id="0" name="Property name">&quot;border&quot;</param>
+                            <param id="1" name="Value">&quot;none&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="773100111979309" type="StartButton">
+                            <param id="0" name="Property name">&quot;font-size&quot;</param>
+                            <param id="1" name="Value">&quot;80px&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="802738261999719">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="758654816668436" type="StartButton">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="128648142763673" type="StartButton">
+                                    <param id="0" name="Instance variable">Selected</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="221655802252748">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="482984189272211" type="StartButton">
+                            <param id="0" name="Instance variable">Selected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set CSS style" sid="380718401199646" type="StartButton">
+                            <param id="0" name="Property name">&quot;color&quot;</param>
+                            <param id="1" name="Value">&quot;black&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="803515415547245" type="StartButton">
+                            <param id="0" name="Property name">&quot;background&quot;</param>
+                            <param id="1" name="Value">&quot;white&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="204814420992836">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="554648679799933" type="StartButton">
+                            <param id="0" name="Instance variable">Selected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set CSS style" sid="188326324948381" type="StartButton">
+                            <param id="0" name="Property name">&quot;color&quot;</param>
+                            <param id="1" name="Value">&quot;white&quot;</param>
+                        </action>
+                        <action id="5" name="Set CSS style" sid="221701287176926" type="StartButton">
+                            <param id="0" name="Property name">&quot;background&quot;</param>
+                            <param id="1" name="Value">&quot;black&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="469692084787230" title="StartControls">
+            <sub-events>
+                <event-block sid="318566699143834">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="455944817592462" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="188749162835699">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="605171075199930" type="System">
+                                    <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                                </condition>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="111889214717959" type="System">
+                                    <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="248299392752830" type="Function">
+                                    <param id="0" name="Name">&quot;setStartButtonSelect&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="707686359883423">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="410562012069330" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="395920079516143">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="295484293448104" type="System">
+                                    <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                                </condition>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="787768638333114" type="System">
+                                    <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="822650591809650" type="Function">
+                                    <param id="0" name="Name">&quot;setStartButtonSelect&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="786722739424301">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="793702841038633" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set visible" sid="657449830285347" type="StartButton">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="264933199968434">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="883875973035085" type="System">
+                                    <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                                </condition>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="515759895088174" type="System">
+                                    <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="984239148415134">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="873552293740674" type="StartButton">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="300659711929762" type="StartButton">
+                                            <param id="0" name="Instance variable">Selected</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="457203882434925" type="System">
+                                            <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="540223336282128">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="207334960114715" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="209555701715189" type="StartButton">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="547407776886368" type="StartButton">
+                                            <param id="0" name="Instance variable">Selected</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="653764692606375" type="System">
+                                            <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="191075116247645">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="612311670217273" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="891629005844605">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="187659331074258" type="System">
+                                    <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="470259357840748" type="System">
+                                    <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="2" name="Set visible" sid="478152814894159" type="StartButton">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="622866071574271">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="431173142996176" type="System">
+                                    <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="245394781623805" type="System">
+                                    <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="2" name="Set visible" sid="299113063770116" type="StartButton">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="479235025636540">
+                    <conditions>
+                        <condition id="0" name="On function" sid="343617510062459" type="Function">
+                            <param id="0" name="Name">&quot;setStartButtonSelect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="280781662439100">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="582743729511495" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Left&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="853564987080328">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="268235423543503" type="StartButton">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="878195388725329" type="StartButton">
+                                            <param id="0" name="Instance variable">Selected</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="201754348778385">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="553439583905068" type="StartButton">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="245427114039916" type="StartButton">
+                                            <param id="0" name="Instance variable">Selected</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="818106533245220">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="236814510774096" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Right&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="931068106853183">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="169498805311157" type="StartButton">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="351816332599360" type="StartButton">
+                                            <param id="0" name="Instance variable">Selected</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="756939975747061">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="898381426292615" type="StartButton">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="734486683835853" type="StartButton">
+                                            <param id="0" name="Instance variable">Selected</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="374360087547375" title="HowToLayer">
+            <sub-events>
+                <event-block sid="788844987134545">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="668222055965847" type="System">
+                            <param id="0" name="Layer">&quot;HowTo&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="669025732695904" type="HowToText">
+                            <param id="0" name="Text">&quot;&apos;&apos;←↓→↑&apos;&apos; to Move&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;&apos;&apos;↑&apos;&apos; to Jump&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;&apos;&apos;Spacebar&apos;&apos; to shoot&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;&apos;&apos;Enter&apos;&apos; to select&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;&apos;&apos;S&apos;&apos; to open the &apos;&apos;go to shop&apos;&apos; menu&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;&apos;&apos;Esc&apos;&apos; to close the menu&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="578256457306965" title="PrologueLayer">
+            <sub-events>
+                <event-block sid="801427511002655">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="617621373804736" type="System">
+                            <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="515656605878411" type="PrologueText1" />
+                        <action id="-16" name="Wait" sid="581741147099940" type="System">
+                            <param id="0" name="Seconds">1.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="434355164464973" type="PrologueText2" />
+                        <action id="-15" name="Set visible" sid="513641772061119" type="PrologueText2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="725164049086188" type="System">
+                            <param id="0" name="Seconds">6.0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="708365442825593" type="PrologueText3" />
+                        <action id="-15" name="Set visible" sid="693728701024539" type="PrologueText3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="445491195900598" type="System">
+                            <param id="0" name="Seconds">5.0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="157266650884061" type="PrologueText4" />
+                        <action id="-15" name="Set visible" sid="202492654933966" type="PrologueText4">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="514253178654060" type="System">
+                            <param id="0" name="Seconds">6.0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="856349144603614" type="PrologueText5" />
+                        <action id="-15" name="Set visible" sid="879299570286397" type="PrologueText5">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="918697210418201">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="562452057420223" type="System">
+                            <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="207752120176555" type="System">
+                            <param id="0" name="Seconds">7.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="400429480358288" type="PrologueEnterText" />
+                        <action id="-15" name="Set visible" sid="375966318168731" type="PrologueEnterText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="537903554435108">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="881852871177484" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="896272536776902">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="257823545232350" type="System">
+                                    <param id="0" name="Layer">&quot;Prologue&quot;</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="242837920288466" type="PrologueEnterText" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="643850128173298" type="System">
+                                    <param id="0" name="Layout">Shop</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

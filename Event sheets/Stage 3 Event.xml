@@ -48,14 +48,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action disabled="1" id="0" name="Call function" sid="660138628570682" type="Function">
-                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;player&quot;</param>
-                </action>
-                <action disabled="1" id="0" name="Call function" sid="308762296423507" type="Function">
-                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;tEnemies&quot;</param>
-                </action>
                 <action behavior="Flash" id="0" name="Flash" sid="110954736254632" type="LifeSprite">
                     <param id="0" name="&apos;On&apos; time">0.05</param>
                     <param id="1" name="&apos;Off&apos; time">0.05</param>
@@ -199,7 +191,7 @@
                         <event-block sid="814599494864653">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="776950100278753" type="System">
-                                    <param id="0" name="First value">40 + Character.DecreaseDamage</param>
+                                    <param id="0" name="First value">35 + Character.DecreaseDamage</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
@@ -207,7 +199,7 @@
                             <actions>
                                 <action id="-11" name="Subtract from" sid="894005176776681" type="System">
                                     <param id="0" name="Variable">PlayerHP</param>
-                                    <param id="1" name="Value">30 + Character.DecreaseDamage</param>
+                                    <param id="1" name="Value">35 + Character.DecreaseDamage</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -222,7 +214,7 @@
                         <event-block sid="792260766065138">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="386912140920702" type="System">
-                                    <param id="0" name="First value">20 + Character.DecreaseDamage</param>
+                                    <param id="0" name="First value">35 + Character.DecreaseDamage</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
@@ -230,7 +222,7 @@
                             <actions>
                                 <action id="-11" name="Subtract from" sid="585713506943845" type="System">
                                     <param id="0" name="Variable">PlayerHP</param>
-                                    <param id="1" name="Value">20 + Character.DecreaseDamage</param>
+                                    <param id="1" name="Value">35 + Character.DecreaseDamage</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -303,217 +295,10 @@
                 </action>
                 <action id="-10" name="Add to" sid="108194156726789" type="System">
                     <param id="0" name="Variable">Money</param>
-                    <param id="1" name="Value">25</param>
+                    <param id="1" name="Value">50</param>
                 </action>
                 <action id="-9" name="Destroy" sid="611290606567546" type="Coin" />
             </actions>
-        </event-block>
-        <event-block disabled="1" sid="440363207125555">
-            <conditions>
-                <condition id="0" name="On function" sid="660485975657611" type="Function">
-                    <param id="0" name="Name">&quot;playerKnockBack&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Flash" id="0" name="Flash" sid="586549067464582" type="LifeSprite">
-                    <param id="0" name="&apos;On&apos; time">0.05</param>
-                    <param id="1" name="&apos;Off&apos; time">0.05</param>
-                    <param id="2" name="Duration">0.5</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block disabled="1" sid="205795367124608">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="954492315981980" type="System">
-                            <param id="0" name="First value">Function.Param(0)</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">&quot;player&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="315740493558970">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="626280120383742" type="Character">
-                                    <param id="0" name="Comparison">2</param>
-                                    <param id="1" name="X co-ordinate">tEnemies.X</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="365052962780087" type="Character">
-                                    <param id="0" name="Vector X">-3000</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="732108024109378" type="Character">
-                                    <param id="0" name="Frame number">6</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="549770617753780" type="Character">
-                                    <param id="0" name="Object">ParticleBlood</param>
-                                    <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="Image point">2</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block disabled="1" sid="691681298862530">
-                                    <conditions>
-                                        <condition behavior="Platform" id="4" name="Is falling" sid="354027052566729" type="Character" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="2" name="Set spray cone" sid="189876950332763" type="ParticleBlood">
-                                            <param id="0" name="Spray cone">180</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="728695227513807" type="ParticleBlood">
-                                            <param id="0" name="Angle">270</param>
-                                        </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="575841191464329" type="Character">
-                                            <param id="0" name="Vector Y">-300</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="883702885542998">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="642238179583079" type="System" />
-                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="295824157587754" type="Character" />
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="672743831013912" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="564290931699820" type="ParticleBlood">
-                                            <param id="0" name="Angle">180</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block disabled="1" sid="373323492903902">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="800975394124172" type="Character">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="X co-ordinate">tEnemies.X</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="892983090326017" type="Character">
-                                    <param id="0" name="Vector X">3000</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="384882650799566" type="Character">
-                                    <param id="0" name="Frame number">6</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="610287018063990" type="Character">
-                                    <param id="0" name="Object">ParticleBlood</param>
-                                    <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="Image point">3</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block disabled="1" sid="331979642313219">
-                                    <conditions>
-                                        <condition behavior="Platform" id="4" name="Is falling" sid="237165781349769" type="Character" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="2" name="Set spray cone" sid="431183635774230" type="ParticleBlood">
-                                            <param id="0" name="Spray cone">180</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="953076819300212" type="ParticleBlood">
-                                            <param id="0" name="Angle">270</param>
-                                        </action>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="496429684284073" type="Character">
-                                            <param id="0" name="Vector Y">-300</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="829747694034002">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="199281233827352" type="System" />
-                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="388774013669763" type="Character" />
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="267570351292072" type="Character">
-                                            <param id="0" name="Vector Y">-200</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block disabled="1" sid="925801838499768">
-                            <conditions />
-                            <actions>
-                                <action id="-16" name="Wait" sid="763319214975931" type="System">
-                                    <param id="0" name="Seconds">0.2</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="329988998892142" type="Character">
-                                    <param id="0" name="Frame number">ArmourLevel</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block disabled="1" sid="264678544169483">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="975607185836492" type="System">
-                            <param id="0" name="First value">Function.Param(0)</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">&quot;tEnemies&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="526097098168149">
-                            <conditions>
-                                <condition behavior="Platform" id="4" name="Is falling" sid="845524554925192" type="tEnemies" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="970909127566495" type="tEnemies">
-                                    <param id="0" name="Object">ParticleTEnemies</param>
-                                    <param id="1" name="Layer">&quot;Level&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="689053742234508" type="tEnemies" />
-                            </actions>
-                            <sub-events>
-                                <event-block disabled="1" sid="870221462429921">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="352311024319762" type="System">
-                                            <param id="0" name="First value">40 + Character.DecreaseDamage</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Second value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-11" name="Subtract from" sid="689996295932391" type="System">
-                                            <param id="0" name="Variable">PlayerHP</param>
-                                            <param id="1" name="Value">40 + Character.DecreaseDamage</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block disabled="1" sid="597579377986778">
-                            <conditions>
-                                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="825248228324954" type="tEnemies" />
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block disabled="1" sid="957099224651826">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="559163474597452" type="System">
-                                            <param id="0" name="First value">20 + Character.DecreaseDamage</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Second value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-11" name="Subtract from" sid="822955084623867" type="System">
-                                            <param id="0" name="Variable">PlayerHP</param>
-                                            <param id="1" name="Value">20 + Character.DecreaseDamage</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
         </event-block>
         <event-group description="" sid="293784559909635" title="PauseControl3">
             <sub-events>

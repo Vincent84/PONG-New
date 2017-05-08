@@ -119,7 +119,7 @@
                                     <param id="0" name="Angle">random(20,30)</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="535172943685891" type="Ball">
-                                    <param id="0" name="Speed">(0.1*Character.8Direction.Speed)+Ball.Bullet.Speed</param>
+                                    <param id="0" name="Speed">(0.05*Character.8Direction.Speed)+Ball.Bullet.Speed</param>
                                 </action>
                             </actions>
                         </event-block>

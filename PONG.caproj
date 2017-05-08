@@ -25,6 +25,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
@@ -452,6 +453,9 @@
         </object-type>
         <object-type name="Coin" sid="440605088784906">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Value" sid="555835524256678" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Physics" sid="746845967023435">
                     <behavior id="Physics" />
@@ -883,6 +887,9 @@
                 <behavior-type name="Solid" sid="368444658164090">
                     <behavior id="solid" />
                 </behavior-type>
+                <behavior-type name="Physics" sid="893079983169186">
+                    <behavior id="Physics" />
+                </behavior-type>
             </behaviors>
             <texture />
         </object-type>
@@ -1008,14 +1015,14 @@
         <object-type name="Audio" sid="113195580056684">
             <plugin id="Audio" />
         </object-type>
-        <object-type name="sEnemies" sid="979340453079062">
+        <object-type name="sEnemiesGreen" sid="979340453079062">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Direction" sid="845223626974132" type="string" />
                 <instance-variable name="HP" sid="647976271400759" type="number" />
-                <instance-variable name="Row" sid="312661807817653" type="number" />
-                <instance-variable name="Column" sid="329463527707154" type="number" />
-                <instance-variable name="Position" sid="671899743854769" type="number" />
+                <instance-variable name="Direction" sid="599552115820280" type="string" />
+                <instance-variable name="Position" sid="670876569710740" type="number" />
+                <instance-variable name="Damage" sid="199526407223223" type="number" />
+                <instance-variable name="Coins" sid="305279388925908" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="221487953291874" speed="5">
@@ -1034,43 +1041,160 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="sBullet" sid="183410084547067">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="DestroyOutsideLayout" sid="165686182890742">
-                    <behavior id="destroy" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="242556616628875">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="967018473169706" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Imagepoint 1" x="0" y="0.5" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="sParticles" sid="808088743176992">
-            <plugin id="Particles" />
-            <texture />
-        </object-type>
         <object-type name="Particles" sid="467770589744926">
             <plugin id="Particles" />
             <texture />
         </object-type>
+        <object-type name="sEnemiesWhite" sid="567158308140791">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="905805611628950" type="number" />
+                <instance-variable name="Direction" sid="296543747275169" type="string" />
+                <instance-variable name="Position" sid="350956558562441" type="number" />
+                <instance-variable name="Damage" sid="609519294339840" type="number" />
+                <instance-variable name="Coins" sid="982226828877635" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="174965685458931" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sEnemiesPink" sid="440231363928798">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="851206832966747" type="number" />
+                <instance-variable name="DirectionFront" sid="667203170953159" type="string" />
+                <instance-variable name="Position" sid="511192130000673" type="number" />
+                <instance-variable name="Damage" sid="981590438966061" type="number" />
+                <instance-variable name="DirectionSide" sid="204112200680673" type="string" />
+                <instance-variable comment="80" name="Coins" sid="148780475874122" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795836321667648" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sBullet" sid="244984505292725">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="414407364007925" type="number" />
+                <instance-variable name="Damage" sid="230870488174564" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="887156354123068">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="968529060150140" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sParticlesWhite" sid="580851524793962">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="sParticlesGreen" sid="966198268568617">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="sParticlesPink" sid="721144001108262">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="StartBackground" sid="515830336501295">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\dbga_45\Downloads\Pongeon SI 3.png" />
+        </object-type>
+        <object-type name="StartButton" sid="825768505679638">
+            <plugin id="Button" />
+            <instance-variables>
+                <instance-variable name="ID" sid="638658976541951" type="number" />
+                <instance-variable name="Selected" sid="320353534329568" type="boolean" />
+            </instance-variables>
+        </object-type>
+        <object-type name="TransparentStartBackground" sid="940047773428424">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite3" sid="214279495067803">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="190123056659979" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HowToText" sid="505518247648985">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="escHowToText" sid="773820978422590">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PrologueText1" sid="949742390820707">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="591741631368350">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="PrologueText2" sid="245844733344419">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="393780441511886">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="PrologueText3" sid="856395000059744">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="154235817074690">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="PrologueText4" sid="493385624767238">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="863564709539669">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="PrologueText5" sid="873384574325572">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="123173933304621">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="PrologueEnterText" sid="381646264748457">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="524665865948936">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
+        <layout>Shop.xml</layout>
         <layout>Stage 1.xml</layout>
         <layout>Stage 2.xml</layout>
-        <layout>Shop.xml</layout>
         <layout>Stage 3.xml</layout>
-        <layout>Pong.xml</layout>
         <layout>Stage 4.xml</layout>
         <layout>Stage 5.xml</layout>
-        <layout>Layout 1.xml</layout>
+        <layout>Pong.xml</layout>
+        <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Stage 1 Event.xml</event-sheet>
@@ -1079,9 +1203,9 @@
         <event-sheet>Shop Event.xml</event-sheet>
         <event-sheet>Stage 3 Event.xml</event-sheet>
         <event-sheet>Pong Event.xml</event-sheet>
-        <event-sheet>Stage 4 Event.xml</event-sheet>
         <event-sheet>Stage 5 Event.xml</event-sheet>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Stage 4 Event.xml</event-sheet>
+        <event-sheet>Start Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="3" />
