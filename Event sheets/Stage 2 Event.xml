@@ -32,6 +32,12 @@
                 <condition behavior="Turret" id="1" name="On shoot" sid="347812935117725" type="aEnemies" />
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="852037814069894" type="Audio">
+                    <param id="0" name="Audio file">shoot</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="946621009733649" type="aEnemies">
                     <param id="0" name="Object">aBullet</param>
                     <param id="1" name="Layer">&quot;Level&quot;</param>
@@ -204,6 +210,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="821826869291831" type="Audio">
+                    <param id="0" name="Audio file">Hurt</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-12" name="Subtract from" sid="525443980664233" type="aEnemies">
                     <param id="0" name="Instance variable">HP</param>
                     <param id="1" name="Value">Bullet.Damage</param>
@@ -248,6 +260,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="933753368484278" type="Audio">
+                    <param id="0" name="Audio file">Collectcoin</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="886479633361724" type="Coin" />
                 <action id="-10" name="Add to" sid="445352774184021" type="System">
                     <param id="0" name="Variable">Money</param>
@@ -262,6 +280,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="603645594795634" type="Audio">
+                    <param id="0" name="Audio file">HurtPlayer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="128293027284431" type="Asteroid" />
                 <action behavior="Flash" id="0" name="Flash" sid="283913440147829" type="LifeSprite">
                     <param id="0" name="&apos;On&apos; time">0.05</param>
@@ -444,6 +468,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="504102438560065" type="Audio">
+                    <param id="0" name="Audio file">HurtPlayer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="940841351734543" type="Asteroid2">
                     <param id="0" name="Object">aParticles</param>
                     <param id="1" name="Layer">&quot;Background&quot;</param>
@@ -598,6 +628,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="145936005242444" type="Audio">
+                    <param id="0" name="Audio file">Hurt</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="836483876892477" type="Asteroid2">
                     <param id="0" name="Object">aParticles</param>
                     <param id="1" name="Layer">&quot;Background&quot;</param>
@@ -622,6 +658,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="271216204055241" type="Audio">
+                    <param id="0" name="Audio file">Hurt</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="685383574653636" type="Asteroid" />
                 <action id="-9" name="Destroy" sid="619826952638643" type="Bullet" />
             </actions>
@@ -653,6 +695,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="401023868203549" type="Audio">
+                    <param id="0" name="Audio file">HurtPlayer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action behavior="Flash" id="0" name="Flash" sid="488675671139224" type="LifeSprite">
                     <param id="0" name="&apos;On&apos; time">0.05</param>
                     <param id="1" name="&apos;Off&apos; time">0.05</param>
@@ -1473,7 +1521,7 @@
                         <event-block sid="276468546421625">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="690224334711475" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                    <param id="0" name="Key">32 (Space)</param>
                                 </condition>
                             </conditions>
                             <actions>

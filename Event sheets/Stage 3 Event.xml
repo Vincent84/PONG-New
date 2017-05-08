@@ -61,6 +61,12 @@
                     <param id="1" name="&apos;Off&apos; time">0.05</param>
                     <param id="2" name="Duration">0.5</param>
                 </action>
+                <action id="0" name="Play" sid="974218303257394" type="Audio">
+                    <param id="0" name="Audio file">HurtPlayer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="283667678045746">
@@ -239,6 +245,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="129747691258759" type="Audio">
+                    <param id="0" name="Audio file">Hurt</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="713164791095348" type="Bullet">
                     <param id="0" name="Object">ParticleTEnemies</param>
                     <param id="1" name="Layer">&quot;Background&quot;</param>
@@ -283,6 +295,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="635926668367333" type="Audio">
+                    <param id="0" name="Audio file">Collectcoin</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-10" name="Add to" sid="108194156726789" type="System">
                     <param id="0" name="Variable">Money</param>
                     <param id="1" name="Value">25</param>
@@ -614,14 +632,14 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="221942453601841">
+                        <event-block sid="914271941549411">
                             <conditions>
-                                <condition id="0" name="On key pressed" sid="319953494245718" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                <condition id="0" name="On key pressed" sid="291954598335409" type="Keyboard">
+                                    <param id="0" name="Key">32 (Space)</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="666939100659020" type="Function">
+                                <action id="0" name="Call function" sid="428116776244565" type="Function">
                                     <param id="0" name="Name">&quot;setLayout&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Stage4&quot;</param>
                                 </action>
@@ -641,5 +659,18 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="611908709906729">
+            <conditions>
+                <condition behavior="Platform" id="6" name="On fall" sid="176967313042317" type="tEnemies" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="999169955693418" type="Audio">
+                    <param id="0" name="Audio file">Fall</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

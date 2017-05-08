@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Stage 5 Event</name>
+    <events>
+        <include>General Event</include>
+        <event-block sid="931481882761380">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="258334519462592" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="546286780263168" type="Function">
+                    <param id="0" name="Name">&quot;SetWeapon&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="651263754242624" type="Function">
+                    <param id="0" name="Name">&quot;SetArmour&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="404944654149376" type="pEnemies">
+                    <param id="0" name="Obstacle">pTerreno</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="231467086258280" type="pEnemies">
+                    <param id="0" name="Obstacle">pObstacle</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="282444126901641">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="791204109231695" type="System">
+                            <param id="0" name="Object">pEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="539803955259241" type="Function">
+                            <param id="0" name="Name">&quot;pickPDestination&quot;</param>
+                            <param id="1" name="Parameter {n}">pEnemies.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="480357300465421" title="Stage5Portal">
+            <sub-events>
+                <event-block sid="415002281469922">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="465954049004736" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="448896419156628" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="880184714285649">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="473367090059462" type="Keyboard">
+                                    <param id="0" name="Key">32 (Space)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="379350962932416" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Pong&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="221999822567896">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="428242894379286" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="596483959035592" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="967881994236867" title="pEnemies">
+            <sub-events>
+                <event-block disabled="1" sid="467326041901202">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="898218661599433" type="pEnemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="691415749337487" type="pEnemies">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="224377237880938">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="988207383249690" type="pEnemies">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="104864592228441" type="pEnemies">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="227927261455416">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="248475146521673" type="pEnemies">
+                            <param id="0" name="Object">pBounce</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="350224372948870">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="680772489159836" type="pEnemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="994613372658818" type="pEnemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="324291714139076">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="129558555306924" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="643256459601548" type="pEnemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="100202379085604" type="pEnemies">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="758443217331786">
+                    <conditions>
+                        <condition id="0" name="On function" sid="658676941354462" type="Function">
+                            <param id="0" name="Name">&quot;pickPDestination&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="400356114096275">
+                            <conditions>
+                                <condition id="-16" name="Pick random instance" sid="708690471001913" type="System">
+                                    <param id="0" name="Object">pDestination</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="613136487172289" type="pEnemies">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="886354085352739" type="pEnemies" />
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="870654246947455" type="pEnemies">
+                                    <param id="0" name="X">pDestination.X</param>
+                                    <param id="1" name="Y">pDestination.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="783097960206691">
+                    <conditions>
+                        <condition id="0" name="On function" sid="824246683119220" type="Function">
+                            <param id="0" name="Name">&quot;onEnemiesRegenMap&quot;</param>
+                        </condition>
+                        <condition id="-11" name="For Each" sid="639965566742641" type="System">
+                            <param id="0" name="Object">pEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="449420550889223" type="pEnemies" />
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="466865419312796" type="pEnemies">
+                            <param id="0" name="X">Self.CurrentDestX</param>
+                            <param id="1" name="Y">Self.CurrentDestY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="322029246996355">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="870572569343623" type="pEnemies" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="333873987774061" type="pEnemies" />
+                    </actions>
+                </event-block>
+                <event-block sid="250868344450186">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="696781652378708" type="pEnemies" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="531933651983350" type="Function">
+                            <param id="0" name="Name">&quot;pickPDestination&quot;</param>
+                            <param id="1" name="Parameter {n}">pEnemies.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="341790079146747">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="5" name="On arrived" sid="456222074880062" type="pEnemies" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="294909053768124" type="Function">
+                            <param id="0" name="Name">&quot;pickPDestination&quot;</param>
+                            <param id="1" name="Parameter {n}">pEnemies.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="379342014690032">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="388909623354792" type="pEnemies" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="335525343680344" type="pEnemies" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="776794379254771" title="Bullet">
+            <sub-events>
+                <event-block sid="543355670976866">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="780831319742550" type="Bullet">
+                            <param id="0" name="Object">pTerreno</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="225336085225177" type="Bullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="880443966144508">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="497847173215010" type="Bullet">
+                            <param id="0" name="Object">pEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="777508469873797" type="Audio">
+                            <param id="0" name="Audio file">Hurt</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="359491760664775" type="Bullet" />
+                        <action id="-12" name="Subtract from" sid="984691461503745" type="pEnemies">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">Bullet.Damage</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="426881631463100">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="433492081691241" type="pEnemies">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="649252325790154" type="Bullet">
+                                    <param id="0" name="Object">pPinkParticles</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="587059020953767">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="692982171494295" type="pEnemies">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="498650584532540" type="pPinkParticles">
+                                            <param id="0" name="Spray cone">360</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="886681348891606" type="pEnemies" />
+                                        <action id="0" name="Spawn another object" sid="393467751098193" type="pEnemies">
+                                            <param id="0" name="Object">Coin</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="146177149060023">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="811495915252877" type="System" />
+                                <condition id="3" name="Compare frame" sid="975012010672273" type="pEnemies">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="712795263901663" type="Bullet">
+                                    <param id="0" name="Object">pAzureParticles</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="138254246863235">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="569837491983275" type="pEnemies">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="650054296659043" type="pAzureParticles">
+                                            <param id="0" name="Spray cone">360</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="504047778123945" type="pEnemies" />
+                                        <action id="0" name="Spawn another object" sid="192355833016934" type="pEnemies">
+                                            <param id="0" name="Object">Coin</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="543973862617802">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="624488299867086" type="System" />
+                                <condition id="3" name="Compare frame" sid="170607093658617" type="pEnemies">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="484318813846450" type="Bullet">
+                                    <param id="0" name="Object">pOrangeParticles</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="826287014390832">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="838198136157305" type="pEnemies">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="104016183026597" type="pOrangeParticles">
+                                            <param id="0" name="Spray cone">360</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="754654965317832" type="pEnemies" />
+                                        <action id="0" name="Spawn another object" sid="726219253558019" type="pEnemies">
+                                            <param id="0" name="Object">Coin</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="274602916780215">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="796484558342001" type="System" />
+                                <condition id="3" name="Compare frame" sid="537348673303758" type="pEnemies">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="545892127922840" type="Bullet">
+                                    <param id="0" name="Object">pRedParticles</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="908645164396896">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="248411305793083" type="pEnemies">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="829412466341167" type="pRedParticles">
+                                            <param id="0" name="Spray cone">360</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="969889075803953" type="pEnemies" />
+                                        <action id="0" name="Spawn another object" sid="108356972959649" type="pEnemies">
+                                            <param id="0" name="Object">Coin</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="198084950584642">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="745013755175002" type="Bullet">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">pEnemies.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="9" name="Set vector X" sid="238672068413178" type="pEnemies">
+                                    <param id="0" name="Vector X">pEnemies.X + 400</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="612575058598409">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="962497963641250" type="System" />
+                                <condition id="-1" name="Compare X" sid="283742288017542" type="Bullet">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">pEnemies.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="9" name="Set vector X" sid="111771092403075" type="pEnemies">
+                                    <param id="0" name="Vector X">pEnemies.X - 400</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="644171638726143" title="Character">
+            <sub-events>
+                <event-block sid="214807014237598">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="115208770024107" type="Character">
+                            <param id="0" name="Object">pEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="951203105236608" type="Audio">
+                            <param id="0" name="Audio file">HurtPlayer</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="933579571078670">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="415259350444448" type="System">
+                                    <param id="0" name="First value">pEnemies.Damage + Character.DecreaseDamage</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="215100460045760" type="System">
+                                    <param id="0" name="Variable">PlayerHP</param>
+                                    <param id="1" name="Value">pEnemies.Damage + Character.DecreaseDamage</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="586343168676584" type="LifeSprite">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="236856038946758">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="236932663648134" type="Character">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">pEnemies.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="316384112018966" type="Character">
+                                    <param id="0" name="Vector X">-3000</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="683053231984830" type="Character">
+                                    <param id="0" name="Frame number">6</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="874276193733435" type="Character">
+                                    <param id="0" name="Object">ParticleBlood</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="218695148493489">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="282875172994624" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="823218367871161" type="ParticleBlood">
+                                            <param id="0" name="Spray cone">180</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="582135382955806" type="ParticleBlood">
+                                            <param id="0" name="Angle">270</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="780157275756686" type="Character">
+                                            <param id="0" name="Vector Y">-300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="493481739249806">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="664641084045940" type="System" />
+                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="810602402785621" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="687606089972179" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="730602222260683" type="ParticleBlood">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="211282017516294">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="614917279155565" type="Character">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">pEnemies.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="197110463952084" type="Character">
+                                    <param id="0" name="Vector X">3000</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="546784002433912" type="Character">
+                                    <param id="0" name="Frame number">6</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="539062112705123" type="Character">
+                                    <param id="0" name="Object">ParticleBlood</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="Image point">3</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="449537470861444">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="111401090405805" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="540902711382706" type="ParticleBlood">
+                                            <param id="0" name="Spray cone">180</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="356558087628608" type="ParticleBlood">
+                                            <param id="0" name="Angle">270</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="289791229716842" type="Character">
+                                            <param id="0" name="Vector Y">-300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="565568955414503">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="464124971854795" type="System" />
+                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="924728539549309" type="Character" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="791924113695412" type="Character">
+                                            <param id="0" name="Vector Y">-200</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="755898102492241">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="952639226104768" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="749646616870616" type="Character">
+                                    <param id="0" name="Frame number">ArmourLevel</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="231542677329119">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="688701745225257" type="Character">
+                    <param id="0" name="Object">Coin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="395476675862559" type="Audio">
+                    <param id="0" name="Audio file">Collectcoin</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Add to" sid="199850796927448" type="System">
+                    <param id="0" name="Variable">Money</param>
+                    <param id="1" name="Value">pEnemies.Coins</param>
+                </action>
+                <action id="-9" name="Destroy" sid="402163807042243" type="Coin" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="909775773864355" title="PauseControl5">
+            <sub-events>
+                <event-block sid="534460959506103">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="950483412838645" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="328308920751173" type="Function">
+                            <param id="0" name="Name">&quot;setPauseWindow&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Alive&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="268732279187299">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="519330284667292" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="951465468249655" type="Function">
+                            <param id="0" name="Name">&quot;unpause&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="539602488359941">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="671254767183995" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="821341046437016" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="326212261381440" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="513189036807460">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="602632439080829" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="166111697232084" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="728086244110195" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="514556481732704">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="768523704736369" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="478835648706714" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="393386543486790" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Enter&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

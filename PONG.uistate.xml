@@ -10,9 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">Stage 4</layout>
+        <layout order="2">Stage 4</layout>
         <event-sheet order="0">General Event</event-sheet>
-        <event-sheet active="1" order="2">Stage 4 Event</event-sheet>
+        <event-sheet active="1" order="1">Stage 4 Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -22,10 +22,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1" />
     <folders-expanded>
-        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
@@ -63,6 +63,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/SpriteTrasparentBoss/" />
         <folder expanded="1" path="animation-folder/Portal/" />
         <folder expanded="1" path="animation-folder/sEnemies/" />
-        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/sBullet/" />
+        <folder expanded="1" path="animation-folder/pEnemies/" />
+        <folder expanded="1" path="animation-folder/pDestination/" />
     </folders-expanded>
 </c2uistate>

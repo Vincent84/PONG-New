@@ -10,6 +10,7 @@
     <unique-id>w517n9lqw1pg</unique-id>
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -25,6 +26,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
@@ -897,13 +899,118 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite3" sid="230565800589525">
+        <object-type name="sBullet" sid="230565800589525">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895465919648426" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="pTerreno" sid="853718925354876">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="232180620734834">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="882080883194892">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="pEnemies" sid="755417749156590">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HP" sid="747044679902814" type="number" />
+                <instance-variable name="Direction" sid="514920893420380" type="string" />
+                <instance-variable name="Damage" sid="796821407789773" type="number" />
+                <instance-variable name="CurrentDestX" sid="319097848886791" type="number" />
+                <instance-variable name="CurrentDestY" sid="724747279301982" type="number" />
+                <instance-variable name="Coins" sid="259779906353316" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="385109152101394">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="974588341595082">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620354615205077" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pBounce" sid="681502981174777">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="pRedParticles" sid="174916720923968">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="pPinkParticles" sid="841934993630785">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="pAzureParticles" sid="434464423490651">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="pOrangeParticles" sid="270733909031126">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="pDestination" sid="245837716550717">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="238472917014258" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pObstacle" sid="760003155686287">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="Audio" sid="113195580056684">
+            <plugin id="Audio" />
         </object-type>
     </object-folder>
     <families />
@@ -914,6 +1021,7 @@
         <layout>Stage 3.xml</layout>
         <layout>Pong.xml</layout>
         <layout>Stage 4.xml</layout>
+        <layout>Stage 5.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Stage 1 Event.xml</event-sheet>
@@ -923,12 +1031,42 @@
         <event-sheet>Stage 3 Event.xml</event-sheet>
         <event-sheet>Pong Event.xml</event-sheet>
         <event-sheet>Stage 4 Event.xml</event-sheet>
+        <event-sheet>Stage 5 Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="3" />
         <global-instance type="Keyboard" uid="4" />
+        <global-instance type="Audio" uid="218">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="Collectcoin.m4a" />
+        <file name="Collectcoin.ogg" />
+        <file name="shoot.m4a" />
+        <file name="shoot.ogg" />
+        <file name="HurtPlayer.m4a" />
+        <file name="HurtPlayer.ogg" />
+        <file name="Hurt.m4a" />
+        <file name="Hurt.ogg" />
+        <file name="Jump.m4a" />
+        <file name="Jump.ogg" />
+        <file name="Select.m4a" />
+        <file name="Select.ogg" />
+        <file name="Fall.m4a" />
+        <file name="Fall.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

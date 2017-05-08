@@ -19,47 +19,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="406632671537453" title="Stage4Portal">
-            <sub-events>
-                <event-block sid="405566502880734">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="234313487929303" type="Character">
-                            <param id="0" name="Object">Portal</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="165568515153117" type="PortalFooter">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="924408661053512">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="483289917790901" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="519444061106505" type="Function">
-                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Pong&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="846420038141058">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="258305042114374" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="129862082084715" type="PortalFooter">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
         <event-group description="" sid="333468198619681" title="sEnemies">
             <sub-events>
                 <event-block sid="969851730694576">
@@ -118,6 +77,125 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="406632671537453" title="Stage4Portal">
+            <sub-events>
+                <event-block sid="405566502880734">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="234313487929303" type="Character">
+                            <param id="0" name="Object">Portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="165568515153117" type="PortalFooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="924408661053512">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="483289917790901" type="Keyboard">
+                                    <param id="0" name="Key">32 (Space)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="519444061106505" type="Function">
+                                    <param id="0" name="Name">&quot;setLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Stage5&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="846420038141058">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="258305042114374" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="129862082084715" type="PortalFooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="135287718570904" title="PauseControl4">
+            <sub-events>
+                <event-block sid="760122586089341">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="847488666175456" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="737138478125961" type="Function">
+                            <param id="0" name="Name">&quot;setPauseWindow&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Alive&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="914478377581671">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="971245203338132" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="272810253793584" type="Function">
+                            <param id="0" name="Name">&quot;unpause&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="241628342668765">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="910531853591126" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="952635993379749" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="686873955158993" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="179106620107122">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="724352315701555" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="353169036018144" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="602658117520217" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="483308534885909">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="588990372270884" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="564505886411011" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="997950987254466" type="Function">
+                            <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Enter&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

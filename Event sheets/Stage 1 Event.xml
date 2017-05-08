@@ -78,6 +78,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="902772574312982" type="Audio">
+                    <param id="0" name="Audio file">Hurt</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="189642209216408" type="Bullet" />
                 <action id="-12" name="Subtract from" sid="439785361673788" type="Enemies">
                     <param id="0" name="Instance variable">HP</param>
@@ -227,7 +233,14 @@
                     <param id="0" name="Object">Enemies</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Play" sid="314654494434419" type="Audio">
+                    <param id="0" name="Audio file">HurtPlayer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
             <sub-events>
                 <comment>Controlllo che evita che i danni ti curino</comment>
                 <event-block sid="285688170530637">
@@ -451,6 +464,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="994648983309703" type="Audio">
+                    <param id="0" name="Audio file">Collectcoin</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="827476741502144" type="Coin" />
                 <action id="-10" name="Add to" sid="469638088071797" type="System">
                     <param id="0" name="Variable">Money</param>
@@ -594,7 +613,7 @@
                         <event-block sid="721313914754270">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="282949176083818" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                    <param id="0" name="Key">32 (Space)</param>
                                 </condition>
                             </conditions>
                             <actions>

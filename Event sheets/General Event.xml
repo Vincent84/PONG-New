@@ -4,10 +4,10 @@
     <name>General Event</name>
     <events>
         <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">100</variable>
-        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
+        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">1000000000</variable>
         <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
-        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
-        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
+        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">5</variable>
+        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">5</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
             <sub-events>
                 <event-block sid="403022564349946">
@@ -237,7 +237,14 @@
                             <param id="0" name="Name">&quot;ShotBullet&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="0" name="Play" sid="812346228177082" type="Audio">
+                            <param id="0" name="Audio file">shoot</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="759693813780200">
                             <conditions>
@@ -661,7 +668,7 @@
                 <event-block sid="225396289155121">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="265361763685422" type="Keyboard">
-                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                            <param id="0" name="Key">32 (Space)</param>
                         </condition>
                         <condition id="-8" name="Is boolean instance variable set" sid="212657704927329" type="Weapon">
                             <param id="0" name="Instance variable">ShotEnabled</param>
@@ -706,6 +713,19 @@
                     <actions>
                         <action id="7" name="Set mirrored" sid="860583434068390" type="Weapon">
                             <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="730124645866092">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="894959183602078" type="Character" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="880367069679080" type="Audio">
+                            <param id="0" name="Audio file">Jump</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1185,7 +1205,21 @@
                             </conditions>
                             <actions>
                                 <action id="-2" name="Go to layout" sid="922528217515220" type="System">
-                                    <param id="0" name="Layout">Pong</param>
+                                    <param id="0" name="Layout">Stage 4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="341818847084864">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="342668124313905" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Stage5&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="470109932154014" type="System">
+                                    <param id="0" name="Layout">Stage 5</param>
                                 </action>
                             </actions>
                         </event-block>

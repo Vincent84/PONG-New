@@ -945,6 +945,45 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="EnemiesParticle" uid="157">
+                    <properties>
+                        <rate>30</rate>
+                        <spray-cone>30</spray-cone>
+                        <type>One-shot</type>
+                        <initial-particle-properties></initial-particle-properties>
+                        <speed>150</speed>
+                        <size>4</size>
+                        <opacity>100</opacity>
+                        <grow-rate>-1</grow-rate>
+                        <x-randomiser>0</x-randomiser>
+                        <y-randomiser>0</y-randomiser>
+                        <speed-randomiser->0</speed-randomiser->
+                        <size-randomiser>0</size-randomiser>
+                        <grow-rate-randomiser>0</grow-rate-randomiser>
+                        <particle-lifetime-properties></particle-lifetime-properties>
+                        <acceleration>-150</acceleration>
+                        <gravity>0</gravity>
+                        <angle-randomiser>0</angle-randomiser>
+                        <speed-randomiser>800</speed-randomiser>
+                        <opacity-randomiser>0</opacity-randomiser>
+                        <destroy-mode>Particle stopped</destroy-mode>
+                        <timeout>0.2</timeout>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1520</x>
+                        <y>480</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -1419,45 +1458,6 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                    </world>
-                </instance>
-                <instance type="EnemiesParticle" uid="157">
-                    <properties>
-                        <rate>30</rate>
-                        <spray-cone>30</spray-cone>
-                        <type>One-shot</type>
-                        <initial-particle-properties></initial-particle-properties>
-                        <speed>150</speed>
-                        <size>4</size>
-                        <opacity>100</opacity>
-                        <grow-rate>-1</grow-rate>
-                        <x-randomiser>0</x-randomiser>
-                        <y-randomiser>0</y-randomiser>
-                        <speed-randomiser->0</speed-randomiser->
-                        <size-randomiser>0</size-randomiser>
-                        <grow-rate-randomiser>0</grow-rate-randomiser>
-                        <particle-lifetime-properties></particle-lifetime-properties>
-                        <acceleration>-150</acceleration>
-                        <gravity>0</gravity>
-                        <angle-randomiser>0</angle-randomiser>
-                        <speed-randomiser>800</speed-randomiser>
-                        <opacity-randomiser>0</opacity-randomiser>
-                        <destroy-mode>Particle stopped</destroy-mode>
-                        <timeout>0.2</timeout>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1520</x>
-                        <y>480</y>
-                        <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>
