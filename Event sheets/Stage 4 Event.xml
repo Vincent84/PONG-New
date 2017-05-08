@@ -36,7 +36,7 @@
                         <event-block sid="924408661053512">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="483289917790901" type="Keyboard">
-                                    <param id="0" name="Key">32 (Space)</param>
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -659,33 +659,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="769160262431997">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="713814915043671" type="sEnemies">
-                    <param id="0" name="Instance variable">HP</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="304841676612086" type="aEnemies" />
-                <action id="0" name="Spawn another object" sid="177180014785453" type="aEnemies">
-                    <param id="0" name="Object">Coin</param>
-                    <param id="1" name="Layer">&quot;Level&quot;</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="335338663709906" type="aEnemies">
-                    <param id="0" name="Object">aParticles</param>
-                    <param id="1" name="Layer">&quot;Background&quot;</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="418437788809140" type="aEnemies">
-                    <param id="0" name="Object">aParticles</param>
-                    <param id="1" name="Layer">&quot;Background&quot;</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-group description="" sid="389272836427115" title="Character Bullet&amp;Damage">
             <sub-events>
                 <event-block sid="165567059149145">
@@ -722,5 +695,32 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="769160262431997">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="713814915043671" type="sEnemies">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="304841676612086" type="sEnemies" />
+                <action id="0" name="Spawn another object" sid="177180014785453" type="sEnemies">
+                    <param id="0" name="Object">Coin</param>
+                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="335338663709906" type="sEnemies">
+                    <param id="0" name="Object">sParticles</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="418437788809140" type="sEnemies">
+                    <param id="0" name="Object">sParticles</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

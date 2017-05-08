@@ -668,7 +668,7 @@
                 <event-block sid="225396289155121">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="265361763685422" type="Keyboard">
-                            <param id="0" name="Key">32 (Space)</param>
+                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                         </condition>
                         <condition id="-8" name="Is boolean instance variable set" sid="212657704927329" type="Weapon">
                             <param id="0" name="Instance variable">ShotEnabled</param>

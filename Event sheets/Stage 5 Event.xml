@@ -57,7 +57,7 @@
                         <event-block sid="880184714285649">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="473367090059462" type="Keyboard">
-                                    <param id="0" name="Key">32 (Space)</param>
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -411,6 +411,44 @@
                                         </action>
                                         <action id="-9" name="Destroy" sid="969889075803953" type="pEnemies" />
                                         <action id="0" name="Spawn another object" sid="108356972959649" type="pEnemies">
+                                            <param id="0" name="Object">Coin</param>
+                                            <param id="1" name="Layer">&quot;Level&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="333063711102669">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="573262741465827" type="System" />
+                                <condition id="3" name="Compare frame" sid="776240847855369" type="pEnemies">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="856318173637524" type="Bullet">
+                                    <param id="0" name="Object">Particles</param>
+                                    <param id="1" name="Layer">&quot;Level&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="909925449504690">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="179574746898217" type="pEnemies">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set spray cone" sid="725098329398072" type="Particles">
+                                            <param id="0" name="Spray cone">360</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="703158008039372" type="pEnemies" />
+                                        <action id="0" name="Spawn another object" sid="141486390238013" type="pEnemies">
                                             <param id="0" name="Object">Coin</param>
                                             <param id="1" name="Layer">&quot;Level&quot;</param>
                                             <param id="2" name="Image point">0</param>

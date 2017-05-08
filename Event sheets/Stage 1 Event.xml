@@ -613,7 +613,7 @@
                         <event-block sid="721313914754270">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="282949176083818" type="Keyboard">
-                                    <param id="0" name="Key">32 (Space)</param>
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                 </condition>
                             </conditions>
                             <actions>

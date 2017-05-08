@@ -46,6 +46,7 @@
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Shop</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -917,37 +918,45 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620354615205077" speed="0">
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620354615205077" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.0625" y="0.0625" />
-                            <point x="0.9375" y="0.0625" />
-                            <point x="0.9375" y="0.9375" />
-                            <point x="0.0625" y="0.9375" />
+                            <point x="0.5" y="0.916667" />
+                            <point x="0.0833333" y="0.5" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.916667" y="0.5" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.0625" y="0.0625" />
-                            <point x="0.9375" y="0.0625" />
-                            <point x="0.9375" y="0.9375" />
-                            <point x="0.0625" y="0.9375" />
+                            <point x="0.5" y="0.916667" />
+                            <point x="0.0833333" y="0.5" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.916667" y="0.5" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.0625" y="0.0625" />
-                            <point x="0.9375" y="0.0625" />
-                            <point x="0.9375" y="0.9375" />
-                            <point x="0.0625" y="0.9375" />
+                            <point x="0.5" y="0.916667" />
+                            <point x="0.0833333" y="0.5" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.916667" y="0.5" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.0625" y="0.0625" />
-                            <point x="0.9375" y="0.0625" />
-                            <point x="0.9375" y="0.9375" />
-                            <point x="0.0625" y="0.9375" />
+                            <point x="0.5" y="0.916667" />
+                            <point x="0.0833333" y="0.5" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.916667" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.5" y="0.916667" />
+                            <point x="0.0833333" y="0.5" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.916667" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -985,7 +994,16 @@
         <object-type name="pObstacle" sid="760003155686287">
             <plugin id="Tilemap" />
             <texture />
-            <tiles />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0.25" y="0.25" />
+                        <point x="0.75" y="0.25" />
+                        <point x="0.75" y="0.75" />
+                        <point x="0.25" y="0.75" />
+                    </collision-poly>
+                </tile>
+            </tiles>
         </object-type>
         <object-type name="Audio" sid="113195580056684">
             <plugin id="Audio" />
@@ -1038,6 +1056,10 @@
             <plugin id="Particles" />
             <texture />
         </object-type>
+        <object-type name="Particles" sid="467770589744926">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1048,6 +1070,7 @@
         <layout>Pong.xml</layout>
         <layout>Stage 4.xml</layout>
         <layout>Stage 5.xml</layout>
+        <layout>Layout 1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Stage 1 Event.xml</event-sheet>
@@ -1058,6 +1081,7 @@
         <event-sheet>Pong Event.xml</event-sheet>
         <event-sheet>Stage 4 Event.xml</event-sheet>
         <event-sheet>Stage 5 Event.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="3" />
