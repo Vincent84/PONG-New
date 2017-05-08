@@ -2295,7 +2295,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2391,7 +2391,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2448,7 +2448,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2505,7 +2505,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2562,7 +2562,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2788,7 +2788,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2845,7 +2845,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2902,7 +2902,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2959,7 +2959,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3016,7 +3016,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3073,7 +3073,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3130,7 +3130,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3187,7 +3187,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3244,7 +3244,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3301,7 +3301,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3358,7 +3358,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3415,7 +3415,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3472,7 +3472,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3529,7 +3529,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3586,7 +3586,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3643,7 +3643,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3700,7 +3700,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3757,7 +3757,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3814,7 +3814,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3871,7 +3871,7 @@
                         <Damage>55</Damage>
                         <CurrentDestX>0</CurrentDestX>
                         <CurrentDestY>0</CurrentDestY>
-                        <Coins>200</Coins>
+                        <Coins>115</Coins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

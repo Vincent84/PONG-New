@@ -84,6 +84,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="701383466839585" type="Audio">
+                            <param id="0" name="Audio file">Select</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action behavior="Bullet" id="4" name="Bounce off object" sid="838409645660040" type="Ball">
                             <param id="0" name="Object">Character</param>
                         </action>
@@ -132,6 +138,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="609890633749347" type="Audio">
+                            <param id="0" name="Audio file">Select</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action behavior="Bullet" id="4" name="Bounce off object" sid="948642819639824" type="Ball">
                             <param id="0" name="Object">BossPong</param>
                         </action>
@@ -144,6 +156,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="747769543252512" type="Audio">
+                            <param id="0" name="Audio file">Select</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="636163822918114" type="Ball">
                             <param id="0" name="Angle">-Ball.Bullet.AngleOfMotion</param>
                         </action>
@@ -185,6 +203,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="976802271869248" type="Audio">
+                                    <param id="0" name="Audio file">HurtPlayer</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-11" name="Subtract from" sid="692809124168645" type="System">
                                     <param id="0" name="Variable">PlayerHP</param>
                                     <param id="1" name="Value">55 + Character.DecreaseDamage</param>
@@ -225,6 +249,12 @@
                                 <condition id="-22" name="Else" sid="559360596894009" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="621560339386635" type="Audio">
+                                    <param id="0" name="Audio file">Hurt</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-12" name="Subtract from" sid="194309645920352" type="BossPong">
                                     <param id="0" name="Instance variable">HP</param>
                                     <param id="1" name="Value">300</param>
@@ -424,6 +454,9 @@
                         <condition id="0" name="On key pressed" sid="645739782815692" type="Keyboard">
                             <param id="0" name="Key">27 (Esc)</param>
                         </condition>
+                        <condition id="-9" name="Layer is visible" sid="679106066625938" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="822945023216988" type="Function">
@@ -491,6 +524,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="394248739143961" type="Audio">
+                            <param id="0" name="Audio file">Hurt</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action behavior="Flash" id="0" name="Flash" sid="999359842812863" type="BossHP">
                             <param id="0" name="&apos;On&apos; time">0.05</param>
                             <param id="1" name="&apos;Off&apos; time">0.05</param>

@@ -82,7 +82,7 @@
                         <Direction>Down</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>90</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -111,7 +111,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -141,7 +141,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -325,7 +325,7 @@
                         <Direction>Down</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>90</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -354,7 +354,7 @@
                         <Direction>Down</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>90</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -383,7 +383,7 @@
                         <Direction>Down</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>90</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -413,7 +413,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -443,7 +443,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -473,7 +473,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -503,7 +503,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -533,7 +533,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -563,7 +563,7 @@
                         <Position>0</Position>
                         <Damage>45</Damage>
                         <DirectionSide>Left</DirectionSide>
-                        <Coins>80</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -592,7 +592,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -621,7 +621,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -650,7 +650,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -679,7 +679,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -708,7 +708,7 @@
                         <Direction>Down</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>90</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -825,7 +825,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -854,7 +854,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -883,7 +883,7 @@
                         <Direction>Right</Direction>
                         <Position>0</Position>
                         <Damage>45</Damage>
-                        <Coins>100</Coins>
+                        <Coins>60</Coins>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

@@ -17,9 +17,6 @@
                     <param id="0" name="Name">&quot;SetArmour&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action behavior="Platform" id="13" name="Set double-jump" sid="899849340706356" type="Character">
-                    <param id="0" name="State">1</param>
-                </action>
                 <action behavior="Turret" id="1" name="Add object to target" sid="295400984280246" type="aEnemies">
                     <param id="0" name="Target">Character</param>
                 </action>
@@ -269,7 +266,7 @@
                 <action id="-9" name="Destroy" sid="886479633361724" type="Coin" />
                 <action id="-10" name="Add to" sid="445352774184021" type="System">
                     <param id="0" name="Variable">Money</param>
-                    <param id="1" name="Value">25</param>
+                    <param id="1" name="Value">15</param>
                 </action>
             </actions>
         </event-block>
@@ -1445,6 +1442,9 @@
                     <conditions>
                         <condition id="0" name="On key pressed" sid="607173014796050" type="Keyboard">
                             <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="372408031871834" type="System">
+                            <param id="0" name="Layer">&quot;GoToShop&quot;</param>
                         </condition>
                     </conditions>
                     <actions>

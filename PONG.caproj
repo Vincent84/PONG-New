@@ -1240,6 +1240,8 @@
         <file name="Select.ogg" />
         <file name="Fall.m4a" />
         <file name="Fall.ogg" />
+        <file name="Backselect.m4a" />
+        <file name="Backselect.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>

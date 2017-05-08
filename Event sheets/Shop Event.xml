@@ -602,6 +602,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="169906768785410" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="476334636437540" type="Function">
                                     <param id="0" name="Name">&quot;SelectButton&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Down&quot;{###}ButtonMenuSelected</param>
@@ -617,6 +623,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="697023840806679" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="228261477970324" type="Function">
                                     <param id="0" name="Name">&quot;SelectButton&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Down&quot;{###}ButtonWeaponsSelected</param>
@@ -632,6 +644,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="775857576187939" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="952376254291039" type="Function">
                                     <param id="0" name="Name">&quot;SelectButton&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Down&quot;{###}ButtonArmorSelected</param>
@@ -657,6 +675,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="107657890392137" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="343207310982606" type="Function">
                                     <param id="0" name="Name">&quot;SelectButton&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Up&quot;{###}ButtonMenuSelected</param>
@@ -672,6 +696,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="993581513149774" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="714915432893600" type="Function">
                                     <param id="0" name="Name">&quot;SelectButton&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Up&quot;{###}ButtonWeaponsSelected</param>
@@ -687,6 +717,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="395584166321298" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="640778672618387" type="Function">
                                     <param id="0" name="Name">&quot;SelectButton&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;Up&quot;{###}ButtonArmorSelected</param>
@@ -746,6 +782,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="310771172729304" type="Audio">
+                                    <param id="0" name="Audio file">Backselect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="2" name="Set visible" sid="967331152597551" type="ButtonWeapons">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
@@ -786,6 +828,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="487016085026757" type="Audio">
+                                    <param id="0" name="Audio file">Backselect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="2" name="Set visible" sid="518976325094319" type="ButtonArmors">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
@@ -826,6 +874,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="782983775865483" type="Audio">
+                                    <param id="0" name="Audio file">Backselect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="2" name="Set visible" sid="530088558365670" type="ButtonPotion">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
@@ -858,6 +912,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="104914189849879" type="Audio">
+                                    <param id="0" name="Audio file">Backselect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="126645498548918" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Value">BuyType&amp;&quot;Menu&quot;</param>
@@ -890,6 +950,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="518812780196224" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="2" name="Set visible" sid="987198165984507" type="ButtonMenu">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
@@ -918,7 +984,14 @@
                                     <param id="0" name="Instance variable">Visible</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="0" name="Play" sid="116355850293040" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="626321089437451">
                                     <conditions>
@@ -1027,6 +1100,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="440146222247967" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="414814331329237" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Value">&quot;ConfirmMenu&quot;</param>
@@ -1101,6 +1180,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="344951557724047" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="557657167190477" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Value">&quot;ConfirmMenu&quot;</param>
@@ -1175,6 +1260,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="163849538490013" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="357343527701783" type="System">
                                     <param id="0" name="Variable">MenuSelected</param>
                                     <param id="1" name="Value">&quot;ConfirmMenu&quot;</param>
@@ -1260,6 +1351,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="103904974928345" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="439093398086397" type="Function">
                                     <param id="0" name="Name">&quot;BuyGadget&quot;</param>
                                     <param id="1" name="Parameter {n}">BuyType</param>
@@ -1291,6 +1388,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="857327270597062" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="255285536220775" type="Function">
                                     <param id="0" name="Name">&quot;SetInvisibleConfirmMenu&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -1318,6 +1421,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="265889690691932" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="895305591114673" type="Function">
                                     <param id="0" name="Name">&quot;SetInvisibleConfirmMenu&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -1351,6 +1460,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="785321275962869" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="753508179697719" type="ButtonConfirm">
                                     <param id="0" name="Instance variable">isSelected</param>
                                     <param id="1" name="Value">0</param>
@@ -1359,6 +1474,11 @@
                         </event-block>
                         <event-block sid="495948306162660">
                             <conditions>
+                                <condition id="-14" name="Compare variable" sid="792965304488698" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
                                 <condition id="-7" name="Compare instance variable" sid="421245456966655" type="ButtonConfirm">
                                     <param id="0" name="Instance variable">ID</param>
                                     <param id="1" name="Comparison">0</param>
@@ -1371,6 +1491,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="232219177290707" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="702782730320419" type="ButtonConfirm">
                                     <param id="0" name="Instance variable">isSelected</param>
                                     <param id="1" name="Value">1</param>
@@ -1404,6 +1530,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="508772954103382" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="313305277707074" type="ButtonConfirm">
                                     <param id="0" name="Instance variable">isSelected</param>
                                     <param id="1" name="Value">0</param>
@@ -1412,6 +1544,11 @@
                         </event-block>
                         <event-block sid="274822680365621">
                             <conditions>
+                                <condition id="-14" name="Compare variable" sid="503281055189774" type="System">
+                                    <param id="0" name="Variable">MenuSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ConfirmMenu&quot;</param>
+                                </condition>
                                 <condition id="-7" name="Compare instance variable" sid="381874838320293" type="ButtonConfirm">
                                     <param id="0" name="Instance variable">ID</param>
                                     <param id="1" name="Comparison">0</param>
@@ -1424,6 +1561,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="599534038010924" type="Audio">
+                                    <param id="0" name="Audio file">Select</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="327862625315125" type="ButtonConfirm">
                                     <param id="0" name="Instance variable">isSelected</param>
                                     <param id="1" name="Value">1</param>

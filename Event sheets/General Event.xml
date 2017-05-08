@@ -3,11 +3,11 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">60</variable>
-        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">100</variable>
+        <variable constant="0" name="Money" sid="713657707618685" static="0" type="number">6000</variable>
+        <variable constant="0" name="PlayerHP" sid="432538939263582" static="0" type="number">1000000</variable>
         <variable constant="0" name="Debug" sid="492852361661493" static="0" type="number">0</variable>
-        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">1</variable>
-        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">1</variable>
+        <variable constant="0" name="ArmourLevel" sid="374749838305765" static="0" type="number">0</variable>
+        <variable constant="0" name="WeaponLevel" sid="134782469580639" static="0" type="number">0</variable>
         <event-group description="" sid="174947350477890" title="GeneralConfiguration">
             <sub-events>
                 <event-block sid="403022564349946">
@@ -29,6 +29,9 @@
                         <action id="-4" name="Set layer visible" sid="468764042035042" type="System">
                             <param id="0" name="Layer">&quot;Debug&quot;</param>
                             <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Platform" id="13" name="Set double-jump" sid="722556083394548" type="Character">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -928,12 +931,22 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="295553741858401" type="Audio">
+                            <param id="0" name="Audio file">Backselect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="-4" name="Set layer visible" sid="685228459940858" type="System">
                             <param id="0" name="Layer">&quot;GoToShop&quot;</param>
                             <param id="1" name="Visibility">0</param>
                         </action>
                         <action id="-13" name="Set time scale" sid="297147147185971" type="System">
                             <param id="0" name="Time scale">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="736601457174391" type="ConfirmGoShop">
+                            <param id="0" name="Instance variable">isSelected</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -943,7 +956,14 @@
                             <param id="0" name="Name">&quot;setPauseSelect&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="0" name="Play" sid="484749726142235" type="Audio">
+                            <param id="0" name="Audio file">Select</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="885898650479632">
                             <conditions>
