@@ -885,28 +885,6 @@
             </behaviors>
             <texture />
         </object-type>
-        <object-type name="sEnemies" sid="567094154083274">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="Direction" sid="321967859597423" type="string" />
-                <instance-variable name="HP" sid="456999758747739" type="number" />
-                <instance-variable name="Row" sid="977026052912057" type="number" />
-                <instance-variable name="Column" sid="431441037269245" type="number" />
-            </instance-variables>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="548644449786922" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="sBullet" sid="230565800589525">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895465919648426" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="pTerreno" sid="853718925354876">
             <plugin id="Tilemap" />
             <behaviors>
@@ -1011,6 +989,54 @@
         </object-type>
         <object-type name="Audio" sid="113195580056684">
             <plugin id="Audio" />
+        </object-type>
+        <object-type name="sEnemies" sid="979340453079062">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Direction" sid="845223626974132" type="string" />
+                <instance-variable name="HP" sid="647976271400759" type="number" />
+                <instance-variable name="Row" sid="312661807817653" type="number" />
+                <instance-variable name="Column" sid="329463527707154" type="number" />
+                <instance-variable name="Position" sid="671899743854769" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="221487953291874" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DummyMatrix" sid="410387384471665">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Element" sid="931429589531465" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="137252592840467" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sBullet" sid="183410084547067">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="165686182890742">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="242556616628875">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="967018473169706" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0" y="0.5" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sParticles" sid="808088743176992">
+            <plugin id="Particles" />
+            <texture />
         </object-type>
     </object-folder>
     <families />
